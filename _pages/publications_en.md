@@ -1,11 +1,11 @@
 ---
 layout: page
-permalink: /publications/
-title: Публикации
-language: ru
-paralink: /publications_en/
-index: 1
+permalink: /publications_en/
+title: Publications
 description: 
+language: en
+paralink: /publications/
+index: 1
 years: [2020, 2019, 2018, 2017,2016,2015]
 years_talks: [2020, 2018, 2017,2015]
 years_workshop: [2019, 2018, 2015]
@@ -14,35 +14,35 @@ nav: true
 
 ---
 <div class="publications">
-<h2>Основные публикации</h2>
+<h2>Main publications</h2>
 {% for y in page.years %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
+  {% bibliography -f papers -T bib_en -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
 
 ---
 <div class="publications">
-<h2>Доклады</h2>
+<h2>Talks</h2>
 {% for y in page.years_talks %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f talks -q @*[year={{y}}]* %}
+  {% bibliography -f talks -T bib_en -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
 
 ---
 <div class="publications">
-<h2>Постерные сессии и семинары</h2>
+<h2>Workshops and poster sessions</h2>
 {% for y in page.years_workshop %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f workshops -q @*[year={{y}}]* %}
+  {% bibliography -f workshops -T bib_en -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
 
 ---
 <div class="publications">
-<h2>Прочее</h2>
-  {% bibliography -f unpublished %}
+<h2>Other</h2>
+  {% bibliography -T bib_en -f unpublished %}
 </div>
 
 

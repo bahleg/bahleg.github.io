@@ -2,6 +2,9 @@
 layout: about
 title: Обо мне
 permalink: /
+language: ru
+paralink: /about_en/
+index: 0
 description: >
     <p> к.ф-м.н., исследователь <a href="http://antiplagiat.ru/">компании Антиплагиат</a>,</p>
     <p> преподаватель <a href="mipt.ru">МФТИ</a>,</p>

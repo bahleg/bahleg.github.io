@@ -6,6 +6,8 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Олег
 middle_name: 
 last_name: Бахтеев
+first_name_en: Oleg
+last_name_en: Bakhteev
 email: bakhteev@phystech.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   
@@ -133,7 +135,7 @@ plugins:
 # -----------------------------------------------------------------------------
 
 scholar:
-
+  last_name_en: Bakhteev
   last_name: [Бахтеев,Bakhteev]
 
   style: apa

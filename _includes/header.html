@@ -3,9 +3,13 @@
     <!-- Nav Bar -->
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
     <div class="container">
-      {% if page.title != "about" %}
+      {% if page.index != 0 %}
       <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
-       {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
+       {% if page.language == "ru" %}
+           {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
+       {% else %}
+           {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name_en }}</span> {{ site.middle_name_en }}  {{ site.last_name_en }}{% else %}{{ site.title }}{% endif %}
+       {% endif %}
       </a>
       {% elsif site.show_social_icons %}
         <!-- Social Icons -->
@@ -23,13 +27,23 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
-          <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
+          <li class="nav-item {% if page.index == 0 %}active{% endif %}">
+            {% if page.language=="ru" %}
             <a class="nav-link" href="{{ '/' | relative_url }}">
               Обо мне
-              {% if page.title == Обо мне" %}
+              {% if page.index == 0 %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
+            {% endif %}
+           {% if page.language=="en" %}
+            <a class="nav-link" href="{{ '/about_en' | relative_url }}">
+              About
+              {% if page.index == 0 %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+            {% endif %}
           </li>
           {% if site.blog_name %}
           <!-- Blog -->
@@ -43,9 +57,9 @@
           </li>
           {% endif %}
           <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: "title" %}
+          {% assign sorted_pages = site.pages | sort: "index" %}
           {% for p in sorted_pages %}
-          {% if p.nav and p.autogen == nil %}
+          {% if p.nav and p.autogen == nil and p.language == page.language %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
               <a class="nav-link" href="{{ p.url | relative_url }}">
                 {{ p.title }}
@@ -56,14 +70,15 @@
           </li>
           {% endif %}
           {% endfor %}
-          {% if site.enable_darkmode %}
-            <div class = "toggle-container">
-              <a id = "light-toggle">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-              </a>
-            </div>
-          {% endif %}
+          <li class="fa-lang">
+            <a class="nav-link" href="{{page.paralink}}">
+            {% if page.language == "ru" %}
+                🇷🇺
+            {% else %}           
+                🇬🇧
+            {% endif %}
+            </a>
+         </i>
         </ul>
       </div>
     </div>
