@@ -33,6 +33,9 @@
       {{entry.title}}
       {% endif %}
       </div>
+      {% if entry.title_en  and entry.bilingual != "True" %}
+      <div style="font-size: 12px"> {{entry.title}}</div>
+      {% endif %}
       <div class="author">
         {% if entry.author_en %}
             {% assign authors  = entry.author_en | split: " and " %}         
@@ -71,42 +74,71 @@
             {% else %}
               {{ full }}
             {% endif %}
-          {% else %}          
-              {% if author_is_self %}
-                <em>{{ full }}</em>,
-              {% else %}
-                {% if coauthor_url %}
-                  <a href="{{coauthor_url}}" target="_blank">{{ full }}</a>,
-                {% else %}
-                  {{ full }},
-                {% endif %}
-              {% endif %}           
+          {% else %}  
+              {% unless forloop.last %}        
+                  {% if author_is_self %}
+                    <em>{{ full }}</em>,
+                  {% else %}
+                    {% if coauthor_url %}
+                      <a href="{{coauthor_url}}" target="_blank">{{ full }}</a>,
+                    {% else %}
+                      {{ full }},
+                    {% endif %}
+                  {% endif %}         
+              {% else %}  
+                  {% if author_is_self %}
+                    <em>{{ full }}</em>
+                  {% else %}
+                    {% if coauthor_url %}
+                      <a href="{{coauthor_url}}" target="_blank">{{ full }}</a>
+                    {% else %}
+                      {{ full }}
+                    {% endif %}
+                  {% endif %}         
+           {% endunless %}
           {% endif %}
         {% endfor %}
-
+    
       </div>
 
       <div class="periodical">
       {% if entry.type == "article" %}
-        <em>{{entry.journal}}</em>
+        {% if entry.journal_en %}
+            <em>{{entry.journal_en}},</em>
+        {% else %}                            
+            <em>{{entry.journal}},</em>
+        {% endif %}
       {% elsif entry.type == "inproceedings" %}
-        <em>In {{entry.booktitle}}</em>
+        {% if entry.booktitle_en %}
+            <em>In {{entry.booktitle_en}},</em>
+        {% else %}
+            <em>In {{entry.booktitle}},</em>
+        {% endif %}
       {% endif %}
       {% if entry.year %}
         {{entry.year}}
       {% endif %}
       </div>
+        {% if entry.note_en %}
+            {{ entry.note_en }}
+        {% else %}
+            {{ entry.note }}
+        {% endif %}
     {% endif %}
-
+    
     <div class="links">
-    {% if entry.abstract %}
+    {% if entry.abstract or entry.abstract_en %}
       <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
     {% endif %}
     {% if entry.arxiv %}
       <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
     {% endif %}
-    {% if entry.html %}
-      <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
+    {% if entry.html or entry.html_en %}
+        {% if entry.html_en %}
+          <a href="{{ entry.html_en }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
+        {% else %}
+          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
+        {% endif %}
     {% endif %}
     {% if entry.pdf %}
       {% if entry.pdf contains '://' %}
@@ -145,14 +177,23 @@
     {% if entry.website %}
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
     {% endif %}
+     <a class="bibtex btn btn-sm z-depth-0" role="button">Bibtex</a>
     </div>
 
     <!-- Hidden abstract block -->
     {% if entry.abstract %}
     <div class="abstract hidden">
-      <p>{{ entry.abstract }}</p>
+      <p>{% if entry.abstract_en %}
+            {{ entry.abstract_en }}
+        {% else %}
+            {{ entry.abstract }}
+        {% endif %}
+      </p>
     </div>
     {% endif %}
+    <div class="bibtex hidden">
+      <pre  style="color:wheat; font-size:8px;">{{ entry.bibtex }}</pre>
+    </div>
   </div>
 </div>
 

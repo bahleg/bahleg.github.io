@@ -7,6 +7,7 @@
   author={Bakhteev, Oleg and Kuznetsova, Rita and Romanov, Alexey and Khritankov, Anton},
   booktitle={2015 Artificial Intelligence and Natural Language and Information Extraction, Social Media and Web Search FRUCT Conference (AINL-ISMW FRUCT)},
   note={Saint Petersburg},
+  note_en={Saint Petersburg, Russia},
   pages={3--10},
   year={2015},
   abstract={In this paper we develop a method for cross-lingual (Russian and English) text reuse detection. The method is based on the monolingual approach - translation of texts into one language and reduction to the text similarity problem. We split texts into non-overlapping fragments and compare fragments to each other by means of different metrics - BLEU(1-2), METEOR, cosine similarity between bag-of-words representations of each snippet, and cosine similarity between vectors obtained from doc2vec-trained model. We explore the impact of choice of metric on the quality of text reuse detection. We assess quality of the method on a sample of a hundred scientific documents, originally in Russian, machine translated into English. Preliminary findings demonstrate feasibility of the approach.},
@@ -31,32 +32,50 @@
 
 @conference{бахтеев2020иои,
   abbr={ИОИ},
+  abbr_en={IDP},
+  title_en={Near-duplicate detection in handwritten school essays},
   title={Поиск почти-дубликатов в рукописных текстах школьных сочинений },
+  author_en = {Oleg Bakhteev and et al.},
   author={Бахтеев, О. Ю. and и, др.},
-  booktitle={Интеллектуализация обработки информаци 2020},
+  booktitle_en={Intelligent Data Processing: Theory and Applications},
+  booktitle={Интеллектуализация обработки информаци},
+  note_en={Online conference},
   note={Онлайн-конференция},  
   year={2020},
   abstract={Рассматривается задача поиска почти-дубликатов в коллекции школьных сочинениях. Актуальность задачи обсуловлена наличием больших библиотек школьных сочинений, которые могут использоваться школьниками в качестве источника заимствования при написании собственного сочинения. Данная проблема является важной для системы образования, что было обозначено в ряде работ, посвященных анализу нарушений, выявляемых при написании сочинений и прохождении академических испытаний. Несмотря на массовость проблемы, на текущий момент не существует автоматических методов анализа сочинений на наличие корректных и некорректных цитирований, а также заимствований. Задача поиска почти-дубликатов рассматривается как задача информационного поиска. Предполагается, что авторы сочинений с допущенными заимствованиями используют в качестве источника заимствования только один текст.Сочинение представляется набором изображений рукописного текста, написанного автором.  Традиционные системы поиска почти-дубликатов и заимствований рассматривают в качестве объекта печатный текст. Основные работы в области анализа текстов рукописных сочинений основаны на методах распознавания текста. Несмотря на успехи в области распознавания печатного текста, а также рукописного текста, написанного с использованием сенсорных устройств, применение данных методов для рассмотренной задачи затруднительно. В отличие от методов, применяемых для распознавания печатного текста, методы распознавания рукописного текста обладают достаточно низким качеством, не позволяющим использовать их для поиска заимствований в тексте сочинений.   Основной проблемой при обработке школьных сочинений является невозможность системы распознавания текста адаптироваться к большому числу вариантов почерка. Поскольку сочинения пишутся разными людьми, то возможность провести дообучение системы по почерку автора отсутствует, что также усложняет задачу.  Другой проблемой методов поиска почти-дубликатов, основанных на распознавании текста, является обязательное наличие разметки - соответствия между регионом изображения и соответствующим ему текстом. Разметка подобного рода для рукописных текстов является трудозатратной, и встречается в открытом доступе крайне редко. Предлагаемый метод поиска почти-дубликатов не требует наличия детально размеченного текста, что позволяет применять его в большом количестве задач, связанных с извлечением информации из изображений рукописного текста. Для решения задачи предлагается рассматривать текст, находящийся в изображении, как последовательность. Предлагается метод, заключающийся в выделении слов в изображении для дальнейшего извлечения графических признаков. В качестве алгоритма извлечения слов применяется метод, основанный на выделении компонент связности. Текст характеризуется последовательностью признаков, получение которых значительно проще, чем распознавание самого слова, что позволяет эффективнее работать с различными вариантамами почерка.  Примером таких признаков являются длина и высота слова в изображении, наличие для слова характерных лигатур. В рамках проведенного эксперимента текст характеризуется нормализованными длинами извлеченных из изображения слов. Полученные статистики являются инвариантными по отношению к почерку автора, а также могут использоваться как для рукописных, так и для машиночитаемых текстов. В качестве функции схожести полученных признаковых описаний школьных сочинений рассматривается набор методов выравнивания последовательностей и временных рядов. Для подтверждения работоспособности метода проводится эксперимент на выборке изображений рукописных текстов школьных сочинений.  },
-  supp={https://www.youtube.com/watch?v=ZuT6xs_mTvI}
+  abstract_en={The paper is devoted to the problem of near-duplicate detection in collections of school essays. Due to the large amount of online resources with available school essays the problem of text reuse detection is actual. This problem is important for the education system, which was noted in a number of works, devoted to the analysis of cheating in writing essays and passing academic tests.  Despite the importance of the problem, at the moment there are no automatic methods for text reuse detection available for the school essays analysis. The task of near-duplicate detection is considered as an information search problem. It is assumed that authors of essays usually use only one text as a source of text reuse.  The essay is represented as a sequence of scanned images of handwritten essay text. Traditional search engines for near-duplicate detection consider the text as an object to analyse. Despite advances in recognition of printed text, as well as handwritten text written using touch devices, the use of these methods for current task is a challenge. Unlike the methods used for the recognition of printed text, the methods of handwritten text recognition have a rather low quality, which does not allow them to be used to search for the near-duplicates in the essays texts. The major problem in school essays text recognition is the inability of the text recognition system to adapt to a large variety of handwriting styles. Since the essays are written by different people, there is no opportunity to fine-tune to the specific author writing style, which also complicates the task. Another problem of near-duplicate detection methods based on text recognition is the requirements of the markup --- the correspondence between the image region and the text in it. Such a markup can rarely be found in the public domain. The proposed method of near-duplicate detection does not require detailed markup text, which makes it possible to use it in a large number of tasks related to the information extraction from the images of handwritten text.},
+  supp={https://www.youtube.com/watch?v=ZuT6xs_mTvI},
+  pdf={http://www.machinelearning.ru/wiki/images/3/31/Idp20.pdf},
 }
 
 @conference{бахтеев2018иои,
   abbr={ИОИ},
+  abbr_en={IDP},
+  title_en={Bayesian deep learning optimal model structure selection},
   title={Байесовский выбор наиболее правдоподобной структуры модели глубокого обучения},
+  booktitle_en={Intelligent Data Processing: Theory and Applications},
+  author_en={Oleg Bakhteev},
   author={Бахтеев, О. Ю.},
-  booktitle={Интеллектуализация обработки информаци 2018},
+  booktitle={Интеллектуализация обработки информаци},
   note={Гаэта, Италия},  
+  note={Gaeta, Italy},
   year={2018},
-  pdf={http://www.machinelearning.ru/wiki/images/1/10/BakhteevIDP18.pdf}
+  pdf={http://www.machinelearning.ru/wiki/images/e/e2/IDP18.pdf},
+  supp={http://www.machinelearning.ru/wiki/images/1/10/BakhteevIDP18.pdf}
 }
 
 
 @conference{бахтеев2017ммро1,
   abbr={ММРО},
+  abbr_en={MMPR},  
   title={Градиентные методы оптимизации гиперпараметров моделей глубокого обучения},
+  title_en={Gradient-based methods of deep learning hyperparameters optimization},
   author={Бахтеев, О. Ю.},
-  booktitle={Математические методы распознавания образов 2017},
+  author_en={Oleg Bakhteev},
+  booktitle_en={Mathematical methods of pattern recognition},
+  booktitle={Математические методы распознавания образов},
   note={Таганрог},  
+  note_en={Taganrog, Russia},
   year={2017},
   html={https://www.elibrary.ru/item.asp?id=32284754}
 }
@@ -64,10 +83,15 @@
 
 @conference{бахтеев2017ммро2,
   abbr={ММРО},
+  abbr_en={MMPR},
   title={Детектирование переводных заимствований в текстах научных статей из журналов, входящих в РИНЦ},
+  title_en={Cross-lingual text reuse detection in scientific papers included in RSCI},
+  booktitle_en={Mathematical methods of pattern recognition},
+  author_en={Oleg Bakhteev and Rita Kuznetsova},
   author={Бахтеев, О. Ю. and Кузнецова Р. В.},
-  booktitle={Математические методы распознавания образов 2017},
+  booktitle={Математические методы распознавания образов},
   note={Таганрог},  
+  note_en={Taganrog, Russia},
   year={2017},
   html={https://www.elibrary.ru/item.asp?id=32284813}
 }

@@ -137,7 +137,7 @@ plugins:
 scholar:
   last_name_en: Bakhteev
   last_name: [Бахтеев,Bakhteev]
-
+  bibtex_skip_fields: [abstract, abstract_en]
   style: apa
   locale: ru
 
