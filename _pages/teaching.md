@@ -26,5 +26,5 @@ nav: true
 
 Курс проводился вместе с А.В. Грабовым (2020-2021) и П.А. Остроуховым (2020).
 
-[**Страница курса**](https://github.com/Intelligent-Systems-Phystech/psad)
+* [*Страница курса*](https://github.com/Intelligent-Systems-Phystech/psad)
 

@@ -26,5 +26,5 @@ nav: true
 
 Co-lecturers: Andrey Grabovoy (2020-2021) and Petr Ostroukhov(2020)
 
-[**Course page**](https://github.com/Intelligent-Systems-Phystech/psad)
+* [*Course page*](https://github.com/Intelligent-Systems-Phystech/psad)
 
