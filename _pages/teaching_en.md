@@ -24,7 +24,7 @@ nav: true
 ## Applied statistical data analysis [In Russian], 2019-2021
 [Math basic management department](https://mipt.ru/education/chairs/math_basic_management/). The course is based on the course of Professor Konstantin Vorontsov and Evgeniy Riabenko, PhD.
 
-Co-lecturers: Andrey Grabovoy (2020-2021) and Petr Ostroukhov(2020)
+Co-lecturers: Andrey Grabovoy (2020-2021) and Petr Ostroukhov (2020)
 
 * [Course page](https://github.com/Intelligent-Systems-Phystech/psad)
 
