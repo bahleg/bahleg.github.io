@@ -1,16 +1,19 @@
 <header>
-
+    {% if page.nav != false %}
     <!-- Nav Bar -->
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
     <div class="container">
       {% if page.index != 0 %}
-      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
        {% if page.language == "ru" %}
-           {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
+         <a class="navbar-brand title font-weight-lighter" href="{{ '/about' | relative_url }}/">
+           {% if site.title == "blank" %}{{ site.first_name }}{{ site.middle_name }} <span class="font-weight-bold"> {{ site.last_name }}</span> {% else %}{{ site.title }}{% endif %}
+         </a>
        {% else %}
-           {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name_en }}</span> {{ site.middle_name_en }}  {{ site.last_name_en }}{% else %}{{ site.title }}{% endif %}
+         <a class="navbar-brand title font-weight-lighter" href="{{ '/about_en' | relative_url }}/">       
+           {% if site.title == "blank" %}{{ site.first_name_en }}{{ site.middle_name_en }} <span class="font-weight-bold"> {{ site.last_name_en }}</span> {% else %}{{ site.title }}{% endif %}
+         </a>
        {% endif %}
-      </a>
+
       {% elsif site.show_social_icons %}
         <!-- Social Icons -->
         <div class="row ml-1 ml-sm-0">
@@ -59,7 +62,7 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: "index" %}
           {% for p in sorted_pages %}
-          {% if p.nav and p.autogen == nil and p.language == page.language %}
+          {% if p.nav and p.autogen == nil and p.language == page.language and p.index>0 %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
               <a class="nav-link" href="{{ p.url | relative_url }}">
                 {{ p.title }}
@@ -83,5 +86,5 @@
       </div>
     </div>
   </nav>
-
+  {% endif %}
 </header>

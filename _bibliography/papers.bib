@@ -1,11 +1,11 @@
 ---
 ---
 
-@article{бахтеев2006восстановление,
+@article{bakhteev2015panel,
   abbr={JMLDA},
   abstract_en={A decision-making problem is solved in the field of operational research education. The paperpresents a method for recovery of changes in ratings of student employees. These ratings arebased on interviews at the information technology (IT) training center. A dataset consistingof expert estimates for assessments for different years and overall rating for these studentsis considered. The scales of the expert estimates vary from year to year, but the scale of therating remains stable. One should recover the time-independent ranking model. The problem isstated as the object–feature–year panel matrix recovery. It is a map from student descriptions(or their generalized portraits) to expected ratings for all years. Also, a stability of the rankingmodel produced by the panel matrix is studied. A new method ofpanel matrix recovery issuggested. It is based on a solution of multidimensional assignment problem. To constructa ranking model, an ordinal classification algorithm with partially ordered feature sets and analgorithm based on support vector machine have been used. The problem is illustrated by thedataset containing the expert assessment of the student interviews at the IT center.},
   abstract={Работа посвящена восстановлению ежегодных изменений рейтингов студентов при со-беседовании в учебный центр. Рассматривается выборка, состоящая из экспертных оценокстудентов, проходивших собеседование в учебный центр в течение нескольких лет и ито-говых рейтингов студентов. Шкалы экспертных оценок меняются из года в год, но шкаларейтингов остается неизменной. Требуется восстановить ранжирующую модель, не зави-сящую от времени. Задача сводится к восстановлению панельной матрицы (т. е. матрицыобъект–признак–год), ставящей во взаимное соответствие некоторого студента (или усред-ненный ¾портрет¿ студента) и его предполагаемую оценку на собеседованиях за каждыйгод, и исследованию ранжирующей модели, полученной на основе этой матрицы, а такжеанализу ее устойчивости на протяжении нескольких лет. Предлагается метод восстанов-ления панельной матрицы, основанный на решении многомерной задачи о назначениях.В качестве метода восстановления ранжирующей модели используется алгоритм много-классовой классификации с отношением полного порядка на классах.},
-  title={Panel matrix and ranking model recoveryusing mixed-scale measured data},
+  title={Panel matrix and ranking model recovery using mixed-scale measured data},
   author={Bakhteev, Oleg},
   author_en={Oleg Bakhteev},
   journal_en={Journal of machine learning and data analysis},
@@ -258,5 +258,48 @@
   html={https://pan.webis.de/publications.html},
   abstract={The paper describes the neural networks-based approach for ProfilingFake News Spreaders on Twitter task at PAN 2020. The problem is reduced to thebinary classification with a set of tweets of the user as an object to classify andclass labels corresponding to users that are likely to spread fake news and ordinaryusers. To deal with a set of tweets we employ two neural network architectures:either based on recurrent or convolutional neural networks. We try aggregate thewhole information obtained from the tweets to decide whether the user can spreadfake news or not. We also present an ensemble of models that consists of a neuralnetwork and a classification model that works on each tweet separately.},
 
+}
+
+
+@article{кузнецова2021методы,
+  abbr_en= {IiEP},
+  abbr={ИИП},
+  title_en={Methods of cross-lingual text reuse detection in large textual collections},
+  title={Методы обнаружения переводных заимствований в больших текстовых коллекциях},
+  author_en={Rita Kuznetsova and Oleg Bakhteev and Yury Chekhovich},
+  abstract_en={The paper investigates the cross-lingual text reuse detection problem. The paper proposes a monolingualapproach to this problem: to translate the suspicious document into the language of the collection for the furthermonolingual analysis. One of the major requirements for theproposed method is robustness to the machinetranslation ambiguity. The further document analysis is divided into two steps. At the first step, the authors retrievedocuments-candidates which are likely to be the source of the text reuse. For the robustness, the authors proposeto retrieve the documents using word clusters that are constructed using distributional semantics. At the secondstep, the authors compare the suspicious document with candidates using sentence embeddings that are obtainedby deep learning neural networks. The experiment was conducted for the “English–Russian” language pair bothon the synthetic data and on the articles included in the Russian Science Citation Index.},
+  author={Кузнецова, Р. В. and Бахтеев, О. Ю. and Чехович, Ю. В.},
+  journal={Информатика и её применения},
+  journal_en={Informatics and Applications}, 
+  volume={15},
+  number={1},
+  pages={30--41},
+  year={2021},
+  html={http://www.ipiran.ru/journal/issues/article/19922264210105.html},
+  publisher={Российская академия наук, Отделение нанотехнологий и информационных технологий},
+  pdf = {http://www.ipiran.ru/journal/issues/2021_15_01/Vol15_Issue1.pdf},
+  abstract={Рассматривается задача обнаружения переводных заимствований. Для решения предлагается использовать моноязыковой подход — свести задачу обнаружения заимствований к одному языку,используя машинный перевод. В связи со спецификой рассматриваемой задачи предлагаемый алгоритмобнаружения должен быть устойчив к неоднозначностям перевода. Предлагается декомпозировать задачу на несколько этапов. Сначала отбираются документы-кандидаты, устойчивость к неоднозначностиперевода достигается за счет замены слов на метки кластеров, полученных с помощью дистрибутивной модели. Затем происходит сравнение найденных кандидатов ирассматриваемого документа, для этогоиспользуется отображение текстовых фрагментов документов в векторное пространство высокой размер-ности. Вычислительный эксперимент проводится для языковой пары «русский–английский» на двухвыборках — синтетическом корпусе и на статьях из журналов, входящих в Российский индекс научногоцитирования (РИНЦ).},
+ sitetag={publ}
+}
+
+@article{гребенькова2021вариационная,
+  abbr_en= {IiEP},
+  abbr={ИИП},
+  title_en={Methods of cross-lingual text reuse detection in large textual collections},
+  title={Вариационная оптимизация модели глубокого обучения с контролем сложности},
+  author_en={Olga Grebenkova and Oleg Bakhteev and Vadim Strijov},
+  abstract_en={This paper investigates the problem of deep learning model optimization. The authors propose a methodto control model complexity. The minimum description length is interpreted as the complexity of the model. It actsas the minimal amount of information that is required to transfer information about the model and the dataset. Theproposed method is based on representation of a deep learning model. The authors propose a form of a hypernetusing the Bayesian inference. A hypernet is a model that generates parameters of an optimal model. The authorsintroduce probabilistic assumptions about the distribution of parameters of the deep learning model. The papersuggests maximizing the evidence lower bound of the Bayesian model validity. The authors consider the evidencebound as a conditional value that depends on the required model complexity. The authors analyze this method incomputational experiments on the MNIST dataset.},
+  author={Гребенькова, О. С. and Бахтеев, О. Ю. and Стрижов, В. В.},
+  journal={Информатика и её применения},
+  journal_en={Informatics and Applications}, 
+  volume={15},
+  number={1},
+  pages={42--49},
+  year={2021},
+  html={http://www.ipiran.ru/journal/issues/article/19922264210106.html},
+  publisher={Российская академия наук, Отделение нанотехнологий и информационных технологий},
+  pdf = {http://www.ipiran.ru/journal/issues/2021_15_01/Vol15_Issue1.pdf},
+  abstract={Исследуется задача построения модели глубокого обучения. Предлагается способ контроля ее сложности. Под сложностью модели понимается минимальная длина описания, минимальный объем информации, который требуется для передачи информации о модели и о выборке. Предлагается метод оптимизации параметров модели, основанный на представлении модели глубокого обучения в виде гиперсети с использованием байесовского подхода. Под гиперсетью понимается модель, которая порождает параметры оптимальной модели. Вводятся вероятностные предположения о распределении параметров модели глубокого обучения. Предлагается алгоритм, максимизирующий нижнюю вариационную оценку байесовской обоснованности модели. Вариационная оценка рассматривается как условная величина,зависящая от требуемой сложности модели. Для анализа качества предлагаемого алгоритма проведены эксперименты на выборке MNIST.},
+ sitetag={publ}
 }
 

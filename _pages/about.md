@@ -1,7 +1,7 @@
 ---
 layout: about
 title: Обо мне
-permalink: /
+permalink: /about
 language: ru
 paralink: /about_en/
 index: 0

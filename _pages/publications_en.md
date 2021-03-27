@@ -6,7 +6,7 @@ description:
 language: en
 paralink: /publications/
 index: 1
-years: [2020, 2019, 2018, 2017,2016,2015]
+years: [2021, 2020, 2019, 2018, 2017,2016,2015]
 years_talks: [2020, 2018, 2017,2015]
 years_workshop: [2019, 2018, 2015]
 nav: true

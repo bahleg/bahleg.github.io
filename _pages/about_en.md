@@ -3,7 +3,7 @@ layout: about_en
 title: About
 index: 0
 language: en
-paralink: /about_ru/
+paralink: /about/
 permalink: /about_en/
 description: >
     <p> PhD, researcher at <a href="http://antiplagiat.com/">Antiplagiat</a>,</p>
@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 
 ---
 
-## Useful links
+## Links
 * [Conference list for ML papers](https://tinyurl.com/bahleg-conf)
 * [Journal list for ML papers](https://tinyurl.com/bahleg-journals)
 
