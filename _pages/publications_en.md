@@ -13,12 +13,20 @@ nav: true
 ---
 
 ---
-<div class="btn-group-vertical btn-group-sm position-fixed"  style="left: 50px; top:200px " role="group">
+<div class="btn-group-vertical btn-group-sm position-fixed d-none d-lg-block"  style="left: 50px; top:200px " role="group">
   <a class="btn pub-btn"  href="#publications">Main</a>
   <a class="btn pub-btn" href="#talks">Talks</a>
   <a class="btn pub-btn" href="#workshops">Workshops and posters</a>
   <a class="btn pub-btn" href="#other">Other</a>
 </div>
+
+<div class="btn-group-sm d-lg-none"  role="group">
+  <a class="btn"  href="#publications">Main</a>
+  <a class="btn" href="#talks">Talks</a>
+  <a class="btn" href="#workshops">Workshops and posters</a>
+  <a class="btn" href="#other">Other</a>
+</div>
+
 
 <div id="publications" style="position: relative; top:-75px; visibility: hidden; display: block;">
 </div>
@@ -61,3 +69,9 @@ nav: true
 </div>
 
 
+<div class="btn-group-sm  d-lg-none"  role="group">
+  <a class="btn"  href="#publications">Main</a>
+  <a class="btn" href="#talks">Talks</a>
+  <a class="btn" href="#workshops">Workshops and posters</a>
+  <a class="btn" href="#other">Other</a>
+</div>

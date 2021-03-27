@@ -13,11 +13,20 @@ nav: true
 ---
 
 ---
-<div class="btn-group-vertical btn-group-sm position-fixed"  style="left: 50px; top:200px " role="group">
+<nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+</nav>
+<div class="btn-group-vertical btn-group-sm position-fixed  d-none d-lg-block"  style="left: 10px; top:200px " role="group">
   <a class="btn pub-btn"  href="#publications">Основные публикации</a>
   <a class="btn pub-btn" href="#talks">Доклады</a>
   <a class="btn pub-btn" href="#workshops">Семинары и постеры</a>
   <a class="btn pub-btn" href="#other">Прочее</a>
+</div>
+
+<div class="btn-group-sm  d-lg-none"  role="group">
+  <a class="btn"  href="#publications">Основные публикации</a>
+  <a class="btn" href="#talks">Доклады</a>
+  <a class="btn" href="#workshops">Семинары и постеры</a>
+  <a class="btn" href="#other">Прочее</a>
 </div>
 
 <div id="publications" style="position: relative; top:-75px; visibility: hidden; display: block;">
@@ -60,4 +69,9 @@ nav: true
   {% bibliography -f unpublished %}
 </div>
 
-
+<div class="btn-group-sm  d-lg-none"  role="group">
+  <a class="btn"  href="#publications">Основные публикации</a>
+  <a class="btn" href="#talks">Доклады</a>
+  <a class="btn" href="#workshops">Семинары и постеры</a>
+  <a class="btn" href="#other">Прочее</a>
+</div>
