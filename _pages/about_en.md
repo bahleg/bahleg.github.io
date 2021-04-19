@@ -3,7 +3,7 @@ layout: about_en
 title: About
 index: 0
 language: en
-paralink: /about/
+paralink: /about
 permalink: /about_en/
 description: >
     <p> PhD, researcher at <a href="http://antiplagiat.com/">Antiplagiat</a>,</p>
