@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /courses/
-paralink: /courses_en/
+permalink: /courses
+paralink: /courses_en
 title: Курсы и лекции
 language: ru
 index: 2

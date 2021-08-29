@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /courses_en/
+permalink: /courses_en
 title: Teaching
 language: en
-paralink: /courses/
+paralink: /courses
 index: 2
 description: Slides and other resources
 nav: true

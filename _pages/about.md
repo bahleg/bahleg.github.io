@@ -3,7 +3,7 @@ layout: about
 title: Обо мне
 permalink: /about
 language: ru
-paralink: /about_en/
+paralink: /about_en
 index: 0
 description: >
     <p> к.ф-м.н., исследователь <a href="http://antiplagiat.ru/">компании Антиплагиат</a>,</p>

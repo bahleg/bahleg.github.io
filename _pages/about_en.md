@@ -4,7 +4,7 @@ title: About
 index: 0
 language: en
 paralink: /about
-permalink: /about_en/
+permalink: /about_en
 description: >
     <p> PhD, researcher at <a href="http://antiplagiat.com/">Antiplagiat</a>,</p>
     <p> lecturer at <a href="https://mipt.ru/english/">Moscow Institute of Physics and Technology</a>,</p>

@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /publications/
+permalink: /publications
 title: Публикации
 language: ru
-paralink: /publications_en/
+paralink: /publications_en
 index: 1
 description: 
 years: [2021, 2020, 2019, 2018, 2017,2016,2015]
