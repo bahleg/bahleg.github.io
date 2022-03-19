@@ -28,7 +28,7 @@ nav: true
 
 * [Страница курса](https://github.com/Intelligent-Systems-Phystech/psad)
 
-## Байесовское мультимоделирование, 2021
+## Байесовское мультимоделирование, 2021-2022
 Курс проводился на кафедре [Интеллектуальных систем МФТИ](https://intelligent-systems-phystech.github.io/ru/) вместе с В. В. Стрижовым
 
 * [Страница курса](https://github.com/Intelligent-Systems-Phystech/BMM-21)

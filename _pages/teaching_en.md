@@ -28,7 +28,7 @@ Co-lecturers: Andrey Grabovoy (2020-2021) and Petr Ostroukhov (2020)
 
 * [Course page](https://github.com/Intelligent-Systems-Phystech/psad)
 
-## Bayesian multimodeling [In Russian], 2021
+## Bayesian multimodeling [In Russian], 2021-2022
 [Department of Intelligent Systems](https://intelligent-systems-phystech.github.io). Co-lecturer:  Vadim Strijov, DSc.
 
 * [Course page](https://github.com/Intelligent-Systems-Phystech/BMM-21)
