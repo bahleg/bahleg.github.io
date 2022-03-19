@@ -75,7 +75,12 @@
         {{entry.year}}
       {% endif %}
       </div>
-      {{entry.note}}
+      
+     {% if entry.presenter %}
+	    <div class="reporter">
+	    Докладчик: {{entry.presenter}}
+	    </div>
+    {% endif %}
     {% endif %}
     <div class="links">
     

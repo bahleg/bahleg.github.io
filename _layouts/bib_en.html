@@ -119,6 +119,13 @@
         {{entry.year}}
       {% endif %}
       </div>
+      	
+        {% if entry.presenter %}
+        	    <div class="reporter">
+	  	    Speaker: {{entry.presenter_en}}
+	  	    </div>
+        {% endif %}
+      
         {% if entry.note_en %}
             {{ entry.note_en }}
         {% else %}

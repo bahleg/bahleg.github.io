@@ -15,14 +15,14 @@ nav: true
 ---
 <div class="btn-group-vertical btn-group-sm position-fixed  d-none d-xl-block"  style="left: -100px; top:200px " role="group">
   <a class="btn pub-btn"  href="#publications">Основные публикации</a>
-  <a class="btn pub-btn" href="#talks">Доклады</a>
+  <a class="btn pub-btn" href="#talks">Доклады на конференциях</a>
   <a class="btn pub-btn" href="#workshops">Семинары и постеры</a>
   <a class="btn pub-btn" href="#other">Прочее</a>
 </div>
 
 <div class="btn-group-sm  d-xl-none"  role="group">
   <a class="btn"  href="#publications">Основные публикации</a>
-  <a class="btn" href="#talks">Доклады</a>
+  <a class="btn" href="#talks">Доклады на конференциях</a>
   <a class="btn" href="#workshops">Семинары и постеры</a>
   <a class="btn" href="#other">Прочее</a>
 </div>
@@ -69,7 +69,7 @@ nav: true
 
 <div class="btn-group-sm  d-xl-none"  role="group">
   <a class="btn"  href="#publications">Основные публикации</a>
-  <a class="btn" href="#talks">Доклады</a>
+  <a class="btn" href="#talks">Доклады на конференциях</a>
   <a class="btn" href="#workshops">Семинары и постеры</a>
   <a class="btn" href="#other">Прочее</a>
 </div>
