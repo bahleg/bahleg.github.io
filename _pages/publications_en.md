@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /publications_en
+description: Oleg Bakhteev, articles, papers, publications, conference talks, workshops
 title: Publications
 description: 
 language: en

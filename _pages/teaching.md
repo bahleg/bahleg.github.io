@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Олег Бахтеев, курсы и лекции, прикладная статистика, байесовское мультимоделирование
 permalink: /courses
 paralink: /courses_en
 title: Курсы и лекции
@@ -21,14 +22,14 @@ nav: true
 * [Страница курса](http://www.machinelearning.ru/wiki/index.php?title=%D0%92%D1%8B%D0%B1%D0%BE%D1%80_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9_%D0%B2_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%BC_%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8_%28%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%B8_%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%2C_%D0%9E.%D0%AE._%D0%91%D0%B0%D1%85%D1%82%D0%B5%D0%B5%D0%B2%2C_%D0%92.%D0%92._%D0%A1%D1%82%D1%80%D0%B8%D0%B6%D0%BE%D0%B2%29/%D0%93%D1%80%D1%83%D0%BF%D0%BF%D0%B0_574%2C_%D0%BE%D1%81%D0%B5%D0%BD%D1%8C_2020)
 * [Байесовское программирование](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides_bpl.pdf)
 
-## Прикладной статистический анализ данных, 2019-2022
+## Прикладной статистический анализ данных, 2019-...
 Курс проводился на кафедре [Математических основ управления МФТИ](https://mipt.ru/education/chairs/math_basic_management/). Курс основан на курсе К. В. Воронцова и Е. А. Рябенко. 
 
 Курс проводился вместе с А. В. Грабовым (2020-2022) и П. А. Остроуховым (2020).
 
 * [Страница курса](https://github.com/Intelligent-Systems-Phystech/psad)
 
-## Байесовское мультимоделирование, 2021-2022
+## Байесовское мультимоделирование, 2021-...
 Курс проводился на кафедре [Интеллектуальных систем МФТИ](https://intelligent-systems-phystech.github.io/ru/) вместе с В. В. Стрижовым
 
 * [Страница курса](https://github.com/Intelligent-Systems-Phystech/BMM-21)
