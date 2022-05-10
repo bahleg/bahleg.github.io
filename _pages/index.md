@@ -11,10 +11,10 @@ nav: false
 <script>
 var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-', '_')).toLowerCase()).split('_');
 if (lang == 'en') {
-  window.location = '/about_en';
+  window.location = 'https://bahleg.site/about_en';
 }
 else {
-    window.location = '/about';
+    window.location = 'https://bahleg.site/about';
 }
 </script>
 
