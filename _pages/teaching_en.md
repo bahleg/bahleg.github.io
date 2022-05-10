@@ -1,6 +1,6 @@
 ---
 layout: page
-description: Oleg Bakhteev, teaching, courses, lectures, applied stasticis, Bayesian multimodeling
+meta_description: Oleg Bakhteev, teaching, courses, lectures, applied stasticis, Bayesian multimodeling
 permalink: /courses_en
 title: Teaching
 language: en

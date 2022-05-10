@@ -1,7 +1,7 @@
 ---
 layout: about_en
 title: About
-description: Oleg Bakhteev, PhD, researcher
+meta_description: Oleg Bakhteev, PhD, researcher
 index: 0
 language: en
 paralink: /about

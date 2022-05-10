@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications
 title: Публикации
-description: Олег Бахтеев, статьи, основные публикации, доклады, семинары, воркшопы
+meta_description: Олег Бахтеев, статьи, основные публикации, доклады, семинары, воркшопы
 language: ru
 paralink: /publications_en
 index: 1

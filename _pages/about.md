@@ -1,6 +1,6 @@
 ---
 layout: about
-description: Олег Бахтеев, к.ф-м.н., исследователь
+meta_description: Олег Бахтеев, к.ф-м.н., исследователь
 title: Обо мне
 permalink: /about
 language: ru

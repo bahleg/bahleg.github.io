@@ -16,7 +16,7 @@
     {{ site.title }}
 {% endif %}
 {% if page.title and page.url != "/" %} | {{ page.title }}{% endif %}</title>
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{{ page.meta_description }}">
 
 <!-- Open Graph -->
 {% if site.serve_og_meta %}
