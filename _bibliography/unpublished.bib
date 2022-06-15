@@ -1,5 +1,19 @@
 ---
 ---
+@phdthesis{grebenkovabsc,
+  abbr = {MSc},
+  abstract={Inductive transfer learning aims at adapting a pre-trained neural network to target data without access to a source database. Most modern methods suffer from strong regularization between corresponding parameters. An eﬃcient inductive transfer learning method should take enough information from a pre-trained model, but also learn vital patterns from new data. We present the novel technique of transfer learning that is based on optimal transport theory. However, this method requires deep neural networks(DNN) that are strongly 1-Lipschitz continuity functions in according to the theory. To solve this issue, we develop such networks and prove necessary thereotically guarantees for them. We show, that the regularization of the proposed method computes ground-truth the Wasserstein-1 distance between distributions of parameters, while another penalization strategies compute a upper bound. We demonstrate the abilities of the proposed method and compare the method with relevant transfer learning techniques.}, 
+  author_en= {Aleksandr Kolesov},
+  author       = {Колесов Александр},   
+  title_en = {An adversarial method for neural network fine-tuning for transfer learning problem, Master thesis}, 
+  title        = {Состязательный метод дообучения нейронной сети в задаче переноса информации, диплом магистра},
+  note_en = {Scientific adviser: Oleg Bakhteev, PhD},
+  note ={Научный руководитель: к.ф.-м.н.  Бахтеев О.Ю.},
+  year         = 2022,
+  bilingual={True}
+}
+
+
 @misc{enai_supp1,
 abbr = {Dataset},
 author =  {Bakhteev, Oleg et al.},
@@ -33,7 +47,7 @@ note = {Supplementary material for the article "The automatic approach for scien
 
 
 @phdthesis{sherbakovabsc,
-  abbr = {BsC},
+  abbr = {BSc},
   abstract={В настоящее время одним из активно развивающихся направлений глубокого обучения является поиск нейронной архитектуры. Глубокое обучение позволило за последние годы добиться значительного прогресса в решении множества задач, таких как классификация изображений, распознавание речи и машинный перевод. Одним из важнейших аспектов этого прогресса являются новые нейронные архитектуры. Используемые в настоящее время архитектуры в основном разрабатывались вручную людьми, что является трудоемким и подверженным ошибкам процессом. В связи с этим растет интерес к методам поиска автоматизированной нейронной архитектуры. В данной работе исследуются методы сэмплирования структуры в градиентных методах поиска нейронной архитектуры. Современные методы поиска нейронной архитектуры, такие как DARTS и SNAS, интерпретируют структуру глубокой модели как граф с ребрами, соответствующими нелинейным функциям в нем. Для обучения различных моделей с использованием градиентного подхода вводим вероятностную интерпретацию для этих ребер. Рассмотрим различные распределения, такие как распределения Softmax, Gumbel-Softmax и Invertible Gaussian Reparameterization для них. Проанализируем производительность полученных нейронных сетей и их устойчивость к прунингу и атакам противника. Вычислительные эксперименты проводятся с использованием набора данных MNIST.},
   author_en= {Valeria Sherbakova},
   author       = {Щербакова Валерия},   
@@ -45,7 +59,7 @@ note = {Supplementary material for the article "The automatic approach for scien
 }
 
 @phdthesis{grebenkovabsc,
-  abbr = {BsC},
+  abbr = {BSc},
   abstract={В работе исследуется задача построения модели глубокого обучения. Предлагается способ контроля ее сложности. Под сложностью модели понимается минимальная длина описания, минимальный объем информации, который требуется для передачи информации о модели и о выборке. Сложность рассматривается как параметр, который может быть задан на этапе получения модели на основе имеющихся вычислительных и других эксплуатационных требований. Чтобы контролировать сложность модели, вводятся вероятностные предположения о распределении параметров модели глубокого обучения.  В работе предложены три формы регуляризации, которые позволяют управлять распределением параметров модели. Предлагается метод оптимизации параметров модели, основанный на представлении модели глубокого обучения в виде гиперсети с использованием байесовского подхода. Под гиперсетью понимается модель, которая генерирует параметры оптимальной модели.  Предлагается подход, максимизирующий нижнюю вариационную оценку байесовской обоснованности модели. Вариационная оценка рассматривается как условная величина, зависящая от требуемой сложности модели. Для анализа качества предлагаемого алгоритма проведены эксперименты на выборках MNIST и CIFAR.},
   abstract_en={The paper is devoted to deep learning model complexity control. The complexity is an amount of the  information that is required to transfer information about the model and the dataset.  We consider a compexity of the model as a parameter that can be set during model inference step based on computational budget and other operational requirements for the model. In order to control the model complexity we introduce a probabilistic assumptions about the distribution of parameters of the deep learning model. The paper instigates three forms of the regularization that allow to control the model parameter distribution. We consider the model evidence as a conditional value that depends on the required model complexity. The proposed method is based on the representation of deep learning model parameters in the form of hypernetwork output. A hypernetwork is a model that generates parameters of an optimal model.  We analyze this method in the computational experiments on the MNIST and CIFAR datasets.},
   author_en= {Olga Grebenkova},
