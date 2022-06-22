@@ -10,6 +10,7 @@ description:
 years: [2021, 2020, 2019, 2018, 2017,2016,2015]
 years_talks: [2022, 2021, 2020, 2018, 2017,2015, 2014]
 years_workshop: [2021, 2019, 2018, 2015]
+years_other: [2022, 2021, 2020, 2019, 2018]
 nav: true
 ---
 
@@ -65,7 +66,10 @@ nav: true
 </div>
 <div class="publications">
 <h2>Прочее</h2>
-  {% bibliography -f unpublished %}
+{% for y in page.years_other %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f unpublished -q @*[year={{y}}]* %}
+{% endfor %}
 </div>
 
 <div class="btn-group-sm  d-xl-none"  role="group">
