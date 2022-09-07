@@ -11,6 +11,7 @@ years: [2022, 2021, 2020, 2019, 2018, 2017,2016,2015]
 years_talks: [2022, 2021, 2020, 2018, 2017,2015, 2014]
 years_workshop: [2021, 2019, 2018, 2015]
 years_other: [2022, 2021, 2020, 2019, 2018]
+years_data: [2022, 2021]
 nav: true
 ---
 
@@ -20,6 +21,7 @@ nav: true
   <a class="btn pub-btn" href="#talks">Доклады на конференциях</a>
   <a class="btn pub-btn" href="#workshops">Семинары и постеры</a>
   <a class="btn pub-btn" href="#other">Прочее</a>
+  <a class="btn pub-btn" href="#data">Датасеты, доп. материалы</a>    
 </div>
 
 <div class="btn-group-sm  d-xl-none"  role="group">
@@ -27,6 +29,7 @@ nav: true
   <a class="btn" href="#talks">Доклады на конференциях</a>
   <a class="btn" href="#workshops">Семинары и постеры</a>
   <a class="btn" href="#other">Прочее</a>
+  <a class="btn" href="#data">Датасеты, доп. материалы</a>    
 </div>
 
 <div id="publications" style="position: relative; top:-75px; visibility: hidden; display: block;">
@@ -71,10 +74,21 @@ nav: true
   {% bibliography -f unpublished -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
+---
+<div id="data" style="position: relative; top:-75px; visibility: hidden; display: block;">
+</div>
+<div class="publications">
+<h2>Датасеты, дополнительные материалы</h2>
+{% for y in page.years_data %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f data -q @*[year={{y}}]* %}
+{% endfor %}
+</div>
 
 <div class="btn-group-sm  d-xl-none"  role="group">
   <a class="btn"  href="#publications">Основные публикации</a>
   <a class="btn" href="#talks">Доклады на конференциях</a>
   <a class="btn" href="#workshops">Семинары и постеры</a>
   <a class="btn" href="#other">Прочее</a>
+  <a class="btn" href="#data">Датасеты, доп. материалы</a>  
 </div>

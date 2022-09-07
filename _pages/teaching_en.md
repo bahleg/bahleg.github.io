@@ -11,14 +11,14 @@ nav: true
 ---
 
 ## Bayesian methods [In Russian], 2019
-[Department of Intelligent Systems](https://intelligent-systems-phystech.github.io). Co-lecturer: Roman Isachenko.
+[Department of Intelligent Systems](https://intsystems.github.io). Co-lecturer: Roman Isachenko.
 * [Bayesian model selection](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides1.pdf)
 * [Hyperparameter optimization](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides2_hyper.pdf)
 * [Metaoptimization and model structure optimization](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides3_meta.pdf)
 * [Deep learning model structure selection](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides4_struct.pdf)
 
 ## Model selection in machine learning, workshop series [In Russian], 2020
-[Department of Intelligent Systems](https://intelligent-systems-phystech.github.io). Co-lecturers:  Vadim Strijov, DSc and Alexander Aduenko, PhD.
+[Department of Intelligent Systems](https://intsystems.github.io). Co-lecturers:  Vadim Strijov, DSc and Alexander Aduenko, PhD.
 * [Course page](http://www.machinelearning.ru/wiki/index.php?title=%D0%92%D1%8B%D0%B1%D0%BE%D1%80_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9_%D0%B2_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%BC_%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8_%28%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%B8_%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%2C_%D0%9E.%D0%AE._%D0%91%D0%B0%D1%85%D1%82%D0%B5%D0%B5%D0%B2%2C_%D0%92.%D0%92._%D0%A1%D1%82%D1%80%D0%B8%D0%B6%D0%BE%D0%B2%29/%D0%93%D1%80%D1%83%D0%BF%D0%BF%D0%B0_574%2C_%D0%BE%D1%81%D0%B5%D0%BD%D1%8C_2020)
 * [Bayesian programming](https://github.com/bahleg/tex_slides/blob/master/sen_20/slides_bpl.pdf)
 
@@ -27,10 +27,14 @@ nav: true
 
 Co-lecturers: Andrey Grabovoy, PhD (2020-2022) and Petr Ostroukhov (2020)
 
-* [Course page](https://github.com/Intelligent-Systems-Phystech/psad)
+* [Course page](https://github.com/intsystems/psad)
 
-## Bayesian multimodeling [In Russian], since 2021
-[Department of Intelligent Systems](https://intelligent-systems-phystech.github.io). Co-lecturer:  Vadim Strijov, DSc.
+## Bayesian multimodeling [In Russian, slides are in English], since 2021
+[Department of Intelligent Systems](https://intsystems.github.io). Co-lecturer:  Vadim Strijov, DSc.
 
-* [Course page](https://github.com/Intelligent-Systems-Phystech/BMM-21)
+* [Course page](https://github.com/intsystems/BMM)
+
+
+## Intellectual data analysis, 2022
+[Department of Intelligent Systems](https://intsystems.github.io). Co-lecturer:  Vadim Strijov, DSc.
 
