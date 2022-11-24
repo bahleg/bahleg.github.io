@@ -7,11 +7,9 @@ language: en
 paralink: /about
 permalink: /about_en
 description: >
-    <p> PhD, research engineer at SK,</p>
-    <p> researcher at <a href="http://antiplagiat.com/">Antiplagiat</a>,</p>
-    <p> ex-lecturer at Fizteh,</p>
-    <p> research associate at <a href="http://www.frccsc.ru/frc/ccas">Dorodnicyn Computing Center, Federal Research Center "Computer Science and Control" of the Russian Academy of Sciences</a>.</p>
-
+    <p> PhD, senior data scientist at  <a href="https://datascience.ch"> Swiss Data Science Center</a>,</p>
+    <p> ex-lecturer at Fizteh.</p>
+    
 profile:
 #selected_papers: true
 social: true  # includes social icons at the bottom of the page
