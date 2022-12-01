@@ -1,5 +1,35 @@
 ---
 ---
+@conference{khabutdinov2022isp,
+  presenter={Хабутдинов И. А.},
+  presenter_en ={Ildar Khabutdinov},
+  abbr={ISP},
+  title={RuGECToR: нейросетевая модель на основе правил для исправления грамматических ошибок на русском языке},
+  title_en={RuGECToR: rule based error correction model for Russian language},
+  author =  {Хабутдинов И. А., и др.},
+  author_en = {Ildar Khabutdinov et al.},
+  booktitle={Ivannikov ISPRAS Open Conference},
+  abstract={Grammatical Error Correction is one of the core Natural Language Processing tasks. At the moment, the open source state-of-the-art Sequence Tagger for English is GECToR model. For the Russian language, this problem does not have solutions with the same good results due to the lack of labeled datasets, therefore we decided to contribute to the aforementioned task. In this research, we described the process of creating a synthetic dataset and training a model on it. We adapt GECToR architecture for Russian language and call it RuGECToR. We use this architecture because, unlike Sequence-to-Sequence approach, it is easy to interpret and does not require a lot of training data. Our goal was to train the model in such a way that it does not adapt to a specific sample, but generalizes the mophorological properties of the language. The presented model achieve an F0.5 of 82.5 on synthetic data and an F0.5 of 22.2 on RULEC dataset which was not in the training set.},
+  note={Москва},
+  note_en={Moscow},
+  year={2022},
+}
+
+@conference{petrushina2022isp,
+  presenter={Петрушина К. Е.},
+  presenter_en ={Kseniia Petrushina},
+  abbr={ISP},
+  title={Антидистилляция: перенос знаний от простой модели к более сложной},
+  title_en={Anti-Distillation: Knowledge Transfer from a Simple Model to the Complex One},
+  author_en={Kseniia Petrushina, Oleg Bakhteev, Andrey Grabovoy, Strijov Vadim},
+  author={Петрушина, К. Е. and Бахтеев, О. Ю. and Грабовой, А. В. and Стрижов, В. В.},
+  booktitle={Ivannikov ISPRAS Open Conference},
+  abstract={The paper considers the problem of adapting the model to new data with a large amount of information. We propose to build a more complex model using the parameters of a simple one. We take into account not only the accuracy of the prediction on the original samples but also the adaptability to new data and the robustness of the obtained solution. The work is devoted to developing the method that allows adapting the pre-trained model to a more heterogeneous dataset. In the computational experiment, we analyse the quality of predictions and model robustness on Fashion-MNIST dataset.},
+  note={Москва},
+  note_en={Moscow},
+  year={2022},
+}
+
 @conference{bakhteev2022enai,
   presenter={Каприелова М. С.},
   presenter_en ={Mariam Kaprielova},
@@ -12,6 +42,7 @@
   year={2022},
   pdf={https://academicintegrity.eu/conference/wp-content/files/2022/Book_of_Abstracts_2022.pdf},
 }
+
 
 
 @conference{финогеев2021,
