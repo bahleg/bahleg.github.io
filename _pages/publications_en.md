@@ -8,7 +8,7 @@ language: en
 paralink: /publications
 index: 1
 years: [2022, 2021, 2020, 2019, 2018, 2017,2016,2015]
-years_talks: [2022, 2021, 2020, 2018, 2017,2015, 2014]
+years_talks: [2023, 2022, 2021, 2020, 2018, 2017,2015, 2014]
 years_workshop: [2021, 2019, 2018, 2015]
 years_other: [2022, 2021, 2020, 2019, 2018]
 years_data: [2022, 2021]
