@@ -8,7 +8,7 @@ paralink: /about_en
 index: 0
 description: >
     <p> к.ф-м.н., аналитик данных в <a href="https://datascience.ch">Swiss Data Science Center</a>,</p>
-    <p> преподаватель физтеха.</p>
+    <p> ранее преподаватель физтеха.</p>
     
 profile:
 #selected_papers: true
@@ -17,10 +17,4 @@ social: true  # includes social icons at the bottom of the page
 
 **Научные интересы**: выбор моделей, глубокое обучение, нейронные сети, байесовский вывод, обработка естественного языка.
 
----
 
-## Полезные ссылки
-* [Список конференций для подачи статей по ML](https://tinyurl.com/bahleg-conf)
-* [Список журналов для подачи статей по ML](https://tinyurl.com/bahleg-journals)
-
----
