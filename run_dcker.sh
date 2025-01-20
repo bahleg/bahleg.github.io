@@ -1,1 +1,1 @@
-docker run --net=host -it  -v `pwd`:/data  ruby:2.7 /bin/bash
+docker run --net=host -it  -v `pwd`:/data  ruby:3.3 /bin/bash
