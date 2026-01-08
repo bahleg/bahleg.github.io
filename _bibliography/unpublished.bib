@@ -1,5 +1,74 @@
 ---
 ---
+@unpublished{habr_25_2,
+abbr={Хабр},
+title= "Intelligent Systems at Phystech: 2025 Year in Review",
+note={Соавтор статьи},
+year={2025},
+html={https://habr.com/en/articles/983138/},
+abbr_en={Habr},
+author_en = "Intelligent systems department",
+note_en={Blog co-author.},
+}
+
+
+@unpublished{habr_25_1,
+abbr={Хабр},
+title= "Intelligent systems at phystech: 2025 graduation",
+note={Соавтор статьи},
+year={2025},
+html={https://habr.com/ru/articles/931468/},
+supp={https://medium.com/@psoi.greg/intelligent-systems-at-phystech-2025-graduation-050e2ac211c6},
+abbr_en={Habr},
+author_en = "Intelligent systems department",
+note_en={Blog co-author.},
+}
+
+
+@phdthesis{nabievbsc,
+  abbr = {BSc}, 
+  abstract={This paper tackles the problem of constructing suboptimal models within multitask learning paradigm. Given a set of intrinsically related tasks, the goal is to uncover a shared structure—known as the inductive bias—across all tasks. By applying constrained evolutionary symbolic regression, we show that these models can be decomposed in a way that reveals the tasks’ underlying structure. We conduct experiments on synthetic data and dataset of numbers MNIST, where the data structure, generation process, and optimal models are known. The results indicate that the models produced by the proposed method are indeed optimal for their respective tasks.},
+  author_en= {Muhammadsharif Nabiev},
+  author       = {Мухаммадшариф Набиев},   
+  title_en = {Predictive multitask model selection using symbolic regression methods, Bachelor thesis at MIPT},  
+  title        = {Выбор предсказательной модели в режиме многозадачного обучения с применением методов символьной регрессии, диплом бакалавра, МФТИ},
+  note_en = {Scientific adviser: Oleg Bakhteev, PhD},
+  note ={Научный руководитель: к.ф.-м.н.  Бахтеев О.Ю.},
+  pdf={https://github.com/intsystems/Nabiev-BS-Thesis/blob/master/paper/Nabiev2025IB.pdf},
+  html={https://github.com/intsystems/Nabiev-BS-Thesis},
+  supp={https://github.com/intsystems/Nabiev-BS-Thesis/blob/master/paper/Nabiev2025IBSlides.pdf},
+  year         = 2025,
+}
+
+@phdthesis{firsovbsc,
+  abbr = {BSc}, 
+  abstract={В работе рассматривается задача выбора архитектуры модели глубо- кого обучения (NAS) с контролем характеристик на заранее неизвест- ном целевом устройстве. Предлагается метод, сочетающий точность модели и эффективность аппаратного исполнения. Рассматриваемый подход основан на дифференцируемом поиске архитектур (DARTS), в котором оптимизируются структурные параметры градиентными методами путём релаксации дискретной задачи к непрерывной. В отличие от базового подхода, в предлагаемом методе архитек- турные параметры сети задаются как функции векторного параметра сложности. Его компоненты трактуются как штрафы за соответству- ющие операции, что обеспечивает детальный контроль структуры модели. Для совместного обучения весов и архитектуры использу- ется распределение Gumbel-Softmax — непрерывная аппроксимация категориального распределения, позволяющая оптимизировать дис- кретный выбор операций градиентными методами. Кроме того, за- действуются гиперсети — вспомогательные нейросети, которые по заданному вектору сложности генерируют веса для основной сети. Такое сочетание даёт возможность одновременно оптимизировать несколько архитектур на разных уровнях сложности в рамках одного обучения, формируя семейство моделей, адаптированных к разнооб- разным вычислительным ресурсам. Эксперименты на CIFAR-10 и Fashion-MNIST показывают, что метод эффективно находит архитек- туры, обеспечивающие компромисс между точностью и задержкой на целевом оборудовании.},
+  author_en= {Sergey Firsov},
+  author       = {Сергей Фирсов},   
+  title_en = {Neural architecture search with target hardware control, Bachelor thesis at MIPT},  
+  title        = {Оптимизация архитектуры нейросети с контролем эксплуатационных характеристик на целевом устройстве, диплом бакалавра, МФТИ},
+  note_en = {Scientific adviser: Oleg Bakhteev, PhD},
+  note ={Научный руководитель: к.ф.-м.н.  Бахтеев О.Ю.},
+  pdf={https://github.com/intsystems/Firsov_KOT_DARTS/blob/master/paper/main_paper.pdf},
+  html={https://github.com/intsystems/Firsov_KOT_DARTS},
+  supp={https://github.com/intsystems/Firsov_FBNet/blob/master/slides/slides.pdf},
+  year         = 2025,
+}
+
+@phdthesis{oleinikbsc,
+  abbr = {BSc}, 
+  abstract={В данной работе рассматривается задача дистилляции знаний в глубо- ких сетях. Методы дистилляции в основном не учитывают разнородность обучаемой модели, так называемого «ученика» и обучающей модели, «учи- теля». Разнородность моделей ведет к снижению эффективности методов дистилляции и неспособности производить дистилляцию знаний между промежуточными слоями моделей. При этом даже при похожих архитекту- рах, но при разном количестве слоёв, существующие методы не учитывают большое количество информации, которой распологает учитель, что ведёт не к лучшему качеству модели ученика при дистилляции знаний. Целью работы является предложить метод дистилляции, который будет учитывать больше информации от учителя, сможет работать с разными архитекту- рами сетей и показывать лучшее качество, по сравнению с классическими методами. Предлагается проводить дистилляцию с помощью максимизации взаимной информации между всеми слоями ученика и учителя. Вводится вариационное распределение, с помощью которого можно максимизировать взаимную информацию, предлагается его вид для свёрточных и линейных слоёв моделей. Были проведены эксперименты, показавшие эффективность предложенного метода, протестированы методы подбора гиперпараметров для данной задачи.},
+  author_en= {Mikhail Oleinik},
+  author       = {Михаил Олейник},   
+  title_en = {Knowledge distillation in deep neural networks using model structure alignment methods, Bachelor thesis at MIPT},  
+  title        = {Дистилляция знаний в глубоких сетях с применением методов выравнивания структур моделей, диплом бакалавра, МФТИ},
+  note_en = {Scientific adviser: Oleg Bakhteev, PhD},
+  note ={Научный руководитель: к.ф.-м.н.  Бахтеев О.Ю.},
+  pdf={https://github.com/intsystems/Oleinik-BS-Thesis/blob/master/paper/Oleinik_thesis.pdf},
+  html={https://github.com/intsystems/Oleinik-BS-Thesis},
+  supp={https://github.com/intsystems/Oleinik-BS-Thesis/blob/master/slides/main.pdf},
+  year         = 2025,
+}
 
 @phdthesis{mrdadproject,
   abbr = {Student}, 
@@ -90,7 +159,6 @@ year={2023}
 
 @unpublished{habr_24,
 abbr={Хабр},
-author= "Кафедра интеллектуальных систем",
 title= "Intelligent Systems at Phystech: 2024 Year in Review",
 note={Соавтор статьи},
 year={2024},

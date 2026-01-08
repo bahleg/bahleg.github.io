@@ -453,3 +453,21 @@ keywords = {Air pollution, Backward simulation, Inverse modeling, Source estimat
 abstract = {Air pollution is one of the most harmful consequences of industrialization because of its strong influence on both human health quality and climate in general. Often there appears a need to identify one single strong source of air pollution appearing as a result of an accident. In this paper, we propose a new algorithm for a single pollution source localization. The proposed algorithm uses the source–receptor matrix concept and assumption about the linearity of pollution transport that allows us to use the pollution spread simulations backward in time. In particular realization, we make use of the weather regional forecast model WRF for airflow simulation and of Lagrangian particle dispersion simulation software FLEXPART-WRF for pollution advection simulation both forward and backward in time. As a result, our algorithm produces the semi-empirical heatmap of possible pollution source locations with marked point of the biggest probability and estimative emission intensity at this point as a function of time. The algorithm is tested on several semi-synthetic and practical cases and compared with other solutions in this field. The mean distance between the predicted and the real sources is around 7 km for the Moscow dataset with 1096 experiments and 45 km region size and around 3 km for the Regional dataset with 803 experiments and 30 km region size. We also conduct an experiment on European Tracer Experiment-1 and get a strong performance on it: distance between the real and the predicted sources is around 6 km, which is comparable or superior to other approaches.}
 }
 
+
+@article{Bishuk2025,
+title = {Выбор оптимальной структуры автокодировщика с применением методов байесовской оптимизации},
+title_en = {Optimal Autoencoder Structure Selection Using Bayesian Optimization},
+journal_en={MIPT proceedings [Trudy MFTI]},
+journal={Труды МФТИ},
+abbr = {MIPT},
+volume = {17},
+number={3},
+pages = {11-22},
+year = {2025},
+pdf = {https://mipt.ru/upload/%D0%A2%D1%80%D1%83%D0%B4%D1%8B%20%D0%BC%D1%84%D1%82%D0%B8/67/02.pdf},
+author = {Anton Bishuk and Oleg Bakhteev},
+abstract = {В работе рассматривается задача выбора структуры модели автокодировщика. Под автокодировщиком понимается дифференцируемая по параметрам модель, представи- мая в виде композиции двух функций: кодировщика, представляющего входной объект в виде скрытого векторного представления, и декодировщика, преобразующего скры- тое векторное представление в исходное признаковое пространство. Структура модели автокодировщика представляется в виде набора гиперпараметров, для выбора которых предлагается применять методы байесовской оптимизации. Предлагается двухэтапная модификация метода байесовской оптимизации: на каждой итерации поиска выбирает- ся множество точек с наилучшей оценкой качества модели, а затем из них отбирается наилучший с учетом динамики обучения. Приводится теоретическое обоснование ал- горитма, а эксперименты на выборках CIFAR и Fashion-MNIST подтверждают эффек- тивность предложенного подхода},
+abstract_en = {The paper considers the problem of the structure selection for autoencoder model. An autoencoder is a model differentiable by parameters, represented as a composition of two functions: an encoder representing the input object as a latent vector representation, and a decoder transforming the latent vector representation into the original feature space. The structure of the autoencoder model is represented as a set of hyperparameters, for the selection of which it is proposed to apply Bayesian optimization methods. A two-stage modification of the Bayesian optimization method is proposed: at each search iteration, a set of points with the best estimate of the model quality is selected, and then the best one is selected from them taking into account the dynamics of training. The theoretical justification of the algorithm is given, and experiments on CIFAR and Fashion-MNIST samples confirm the effectiveness of the proposed approach},
+}
+
+
