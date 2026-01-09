@@ -7,7 +7,7 @@ language: ru
 paralink: /about_en
 index: 0
 description: >
-    <p> к.ф-м.н., старший инженер исследователь в Applied AI Institute,</p>
+    <p> к.ф-м.н., старший инженер-исследователь в Applied AI Institute,</p>
     <p> ранее исследователь в Swiss Data Science Center, Antiplagiat.</p>
     
 profile:
