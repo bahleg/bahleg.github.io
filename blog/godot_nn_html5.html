@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="Mq6PRXIcGjEbdk2gdU6tahVlGnP5nsUEPwtpEH_eYb8" />
+<meta name="google-site-verification" content="kuWiA-bTNcph9MDmdz3lN8Mi_lRgIJnwQC7BM18o5gw" />
+<meta name="yandex-verification" content="9f96efd448af6db3" />
+<meta name="yandex-verification" content="5751bee754a28ad9" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+     
+            Oleg  Bakhteev
+    
+
+ | Godot, HTML5, and Neural Networks: Yet Another Way to Reinvent the Wheel</title>
+<meta name="description" content="Blog post: how to use neural networks in Godot with HTML5 export">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/godot_nn_html5">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+  <!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+    
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+       
+         <a class="navbar-brand title font-weight-lighter" href="/about_en">       
+           Oleg <span class="font-weight-bold"> Bakhteev</span> 
+         </a>
+       
+
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            
+           
+            <a class="nav-link" href="/about_en">
+              About
+              
+            </a>
+            
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications_en">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/courses_en">
+                Teaching
+                
+              </a>
+          </li>
+          
+          
+          <li class="fa-lang">
+            <a class="nav-link" href="/blog/godot_nn_html5">
+                       
+                🇬🇧
+            
+            </a>
+         </i>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Godot, HTML5, and Neural Networks: Yet Another Way to Reinvent the Wheel</h1>
+    <p class="post-meta">December 15, 2024</p>
+  </header>
+
+  <article class="post-content">
+    <p><em>This post is originally published on <a href="https://medium.com/@bahleg/godot-html5-and-neural-networks-yet-another-way-to-reinvent-the-wheel-45461d56d0b5">Medium</a></em></p>
+
+<center>
+<img src="../assets/img/post_nn_godot/logo.png" width="400" />
+</center>
+
+<p>Godot is an awesome and a very rapidly growing game engine allowing thousands of developers to implement their ideas to life — ranging from simple pet-projects to quite mature commercial games.
+However, like any emerging technology, Godot still has areas that need improvement. One such area is the integration of deep learning and neural networks.</p>
+
+<p>The use of deep learning in Godot is a topic of lively debate. Some developers advocate for including neural network capabilities directly within the engine, while others argue that such functionality should remain in the domain of third-party tools, as it’s not central to Godot’s core purpose. Another point of contention lies in how neural networks would be used: for many projects, neural networks are only needed during inference (e.g., for tasks like real-time image upscaling). But for certain projects, the ability to train networks within the game itself is crucial.
+In my case, I needed a neural network capable of being trained during gameplay. Since my dataset is relatively small, I don’t have strict requirements for GPUs or other computational resources. However, my network architecture is complex and demands flexibility in both design and training. Additionally, I’m particularly excited about Godot’s HTML5 export capabilities, which allows users play your game in browsers, so browser compatibility was also an essential factor in my approach.</p>
+
+<p><strong>Disclaimer:</strong> The approach described here may not be optimal for all use cases. It is just one way to work with neural networks in Godot, and I’ll discuss its limitations at the end of the article.</p>
+
+<center>
+<figure>
+    <img src="../assets/img/post_nn_godot/meme.jpg" width="400" />
+    <figcaption>Actually, this meme made with my awesome photoshop skills fully explains what I propose here :)</figcaption>
+</figure>
+</center>
+
+<h1 id="well-well-well-what-do-we-have-here">Well well well, what do we have here?</h1>
+
+<p>Before diving into my solution, let me briefly outline some alternatives I explored:</p>
+<ol>
+  <li>
+    <p><strong>Godot Libraries and Assets for Neural Networks</strong>: A good starting point for neural network integration in Godot is using libraries like <a href="https://github.com/ZeroLikviz/godot_plugin-neural-network">NNET</a>. These tools provide a quick way to bring neural networks into your project. However, the main drawback is their dependency on the library’s development lifecycle, which might slow down or stop entirely. Since Godot is still a relatively young engine, the ecosystem of mature libraries is much smaller compared to more established engines like Unity.</p>
+  </li>
+  <li>
+    <p><strong>Neural Network Libraries for C#</strong>
+Libraries like <a href="https://dotnet.microsoft.com/en-us/apps/ai/ml-dotnet">Microsoft ML.Net</a> could theoretically allow for neural network integration in Godot. However, I couldn’t find any successful examples of this approach being used in practice. Moreover, although Godot can be used together with C#, it isn’t currently supported for HTML5 export, which made this option a non-starter for my needs.</p>
+  </li>
+  <li>
+    <p><strong>Building a Neural Network Library from Scratch</strong>
+Writing your own neural network library tailored to your needs is always an option, especially if performance isn’t a major concern. However, this approach comes with significant drawbacks. To make a library truly flexible, you would need to write a considerable amount of code. Alternatively, if you go for simplicity, you risk being constrained by limited functionality. Implementing key features like backpropagation, layer logic, and optimization techniques (e.g., Adam) could take as much time as developing the entire game prototype itself.</p>
+  </li>
+</ol>
+
+<p>Apart from these alternatives, I would also add libraries like <a href="https://lupoglaz.github.io/GodotAIGym/">Godot AI Gym</a> and <a href="https://huggingface.co/learn/deep-rl-course/en/unitbonus3/godotrl">godot-rl agents</a>. They bring powerful reinforcement learning tools to Godot. While these libraries officially don’t support Godot’s Web export, they use a client-server architecture similar to my approach. For readers interested in reinforcement learning specifically, these libraries could be useful alternatives. However, they are primarily focused on RL tasks and are not well-suited for broader neural network needs.</p>
+
+<p>As you can see, the available alternatives are quite limited, each with its own set of trade-offs. In the next section, I’ll describe the approach I ultimately chose, which aims to strike a balance between flexibility, functionality, and ease of implementation.</p>
+
+<h1 id="what-i-wanted">What I wanted</h1>
+
+<p>To summarize my ideal vision of a tool for using neural networks in Godot, here’s what I consider essential:</p>
+
+<ol>
+  <li><strong>Flexibility:</strong> The tool should support a variety of models, ranging from simple linear regressions and one-layer MLPs to more complex architectures like convolutional and recurrent models. Naturally, it should also include modern tools like optimization algorithms (e.g., Adam/AdamW), gradient clipping, regularization techniques, and more.</li>
+  <li><strong>HTML5 Compatibility:</strong> Since I’m leveraging Godot’s HTML5 export, the tool must work seamlessly in a browser environment.</li>
+  <li><strong>Similarity to PyTorch (Optional):</strong> While not a strict requirement, compatibility with or similarity to PyTorch would be ideal. PyTorch is a widely used library in the deep learning community, and being able to transfer code with minimal adjustments would save a lot of time and effort.</li>
+</ol>
+
+<p>That’s all. Not too much to ask, right? Yet, as it turns out, none of the existing alternatives quite fit the bill: <strong>Godot libraries</strong> are not flexible enough, <strong>libraries written in C#</strong> are not compatitible with HTML5. <strong>Writing my own library</strong> is possible but far from trivial. Implementing a basic set of functionalities isn’t hard, but every additional modification would require significant effort, especially for advanced features.</p>
+
+<p>As you can see, none of these options tick all the boxes, leaving me with the need to explore another path.</p>
+
+<h1 id="what-i-propose">What I propose</h1>
+
+<p>To achieve a flexible neural network framework similar to PyTorch, the most straightforward idea is to try running PyTorch alongside Godot. While embedding PyTorch directly into Godot may be impossible, many use cases can be addressed by running two separate applications: Godot as the client and a Python script with PyTorch support as the server.</p>
+
+<center>
+<img src="../assets/img/post_nn_godot/basic_scheme.png" width="600" />
+</center>
+
+<p>In theory, this sounds simple, but there are key challenges to consider:</p>
+
+<ol>
+  <li><strong>We are targeting at HTML:</strong> in a desktop environment, running a Python interpreter as a separate script and communicating with it via HTTP requests (or another protocol) is straightforward. However, when targeting HTML5, running Python isn’t feasible. Browsers don’t support executing Python code directly, making communication between the main Godot application and a Python interpreter non-trivial.</li>
+  <li><strong>PyTorch in HTML:</strong> Even if we somehow manage to run Python in a browser, the chances of successfully running PyTorch are low. PyTorch is a highly sophisticated library that relies on OS-specific features and hardware-optimized libraries for mathematical computations. Porting such functionality to a browser environment is currently infeasible.</li>
+</ol>
+
+<h2 id="python-and-html-bridging-the-gap">Python and HTML: bridging the gap</h2>
+
+<p>To address the challenge of running Python within an HTML5 environment, we can use <strong>Pyodide</strong> — a framework that enables executing Python code directly inside web containers. Pyodide leverages WebAssembly to provide Python functionality in the browser. The basic run of Pyodide is straightforward, as shown in the example below <a href="https://pyodide.org/en/stable/usage/quickstart.html">(from the library tutorial)</a>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    Pyodide test page <span class="nt">&lt;br&gt;</span>
+    Open your browser console to see Pyodide output
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="k">async</span> <span class="kd">function</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">pyodide</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">loadPyodide</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">pyodide</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="s2">`
+            import sys
+            sys.version
+        `</span><span class="p">));</span>
+        <span class="nx">pyodide</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="dl">"</span><span class="s2">print(1 + 2)</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="nf">main</span><span class="p">();</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>As you can see, Pyodide allows running Python code in the browser by embedding the interpreter in JavaScript. The great advantage is that both Pyodide and Godot can be run simultaneously and communitcate with each other on a single HTML page.
+Imagine, we have a python code snippet:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+ <span class="nf">print </span><span class="p">(</span><span class="n">s</span><span class="p">)</span> 
+ <span class="k">return</span> <span class="mi">42</span> <span class="c1"># just returning value for the example
+</span></code></pre></div></div>
+
+<p>We can run it inside Godot using the following way. At first we must create a function to initialize Pyodide and expose a way to execute Python commands:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="k">async</span> <span class="kd">function</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">pyodide</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">loadPyodide</span><span class="p">();</span>
+        <span class="k">return</span> <span class="nx">pyodide</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="kd">let</span> <span class="nx">pyodideReadyPromise</span> <span class="o">=</span> <span class="nf">main</span><span class="p">();</span>
+      <span class="kd">let</span> <span class="nx">pyodideInstance</span><span class="p">;</span>
+      <span class="nx">pyodideReadyPromise</span><span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">pyodide</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">pyodideInstance</span> <span class="o">=</span> <span class="nx">pyodide</span><span class="p">;</span>
+    <span class="p">});</span>
+      <span class="kd">function</span> <span class="nf">run_py</span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">pyodideInstance</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="nx">cmd</span><span class="p">);</span> <span class="c1">// running Python-code</span>
+            <span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>In Godot, we can use the <strong>JavaScriptBridge</strong> to call the JavaScript function <strong>run_py</strong> and execute Python code:</p>
+
+<pre><code class="language-godot">var text_to_print = 'Hello world'
+var cmd = "run_py(`echo('%s')`);" % text_to_print
+var js_return = JavaScriptBridge.eval(cmd) # here we will get 42
+</code></pre>
+
+<p>This approach establishes a communication bridge between Godot and Pyodide, enabling Python execution directly within the browser.</p>
+
+<h2 id="pytorch-in-pyodide">PyTorch in Pyodide</h2>
+
+<p>While Pyodide allows us to run Python inside an HTML environment and bridges the gap between Python code and Godot, it doesn’t fully solve our second problem: <strong>running PyTorch in Pyodide</strong>. Pyodide supports building Python libraries with dependencies and provides pre-built libraries such as NumPy. However, attempting to run PyTorch in Pyodide is highly challenging due to PyTorch’s heavy reliance on native OS-level libraries for optimized computation. Building PyTorch to run in Pyodide has been discussed extensively, as illustrated in <a href="https://github.com/Pyodide/Pyodide/issues/1625">this GitHub issue</a>.</p>
+
+<p>One way to simplify the problem is to use a lightweight library like <a href="https://github.com/tinygrad/tinygrad">tinygrad</a>. tinygrad is a minimalistic library inspired by PyTorch, designed to provide the following essential features:</p>
+
+<ol>
+  <li><strong>Common Layers</strong> and <strong>basic tensor operations</strong>: Linear, convolutional, batch normalization, and more.</li>
+  <li><strong>Optimizers</strong>: Popular optimizers like Adam, SGD, and others.</li>
+  <li><strong>Utilities for Modern Deep Learning:</strong> Nonlinearities (ReLU, sigmoid, etc.), parameter initializers, and loss functions.</li>
+  <li><strong>Different backends for deep learning computation</strong>: actually, this is the most interesting part of this library, but quite useless for our goal, since we are aiming at HTML export, the usage of different backends for different hardware can be cumbersome.</li>
+</ol>
+
+<p>To illustrate, let’s compare three implementations of a simple task: training a 1-layer ReLU network using the Adam optimizer.</p>
+
+<p>This is how it can be written in PyTorch:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torch.optim</span> <span class="k">as</span> <span class="n">optim</span>
+<span class="c1"># generating XOR dataset for example
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="n">Y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">logical_xor</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]).</span><span class="nf">view</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nf">float</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-2</span> <span class="c1"># adding some noise
+</span><span class="n">epoch_num</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sigmoid</span><span class="p">(),</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="p">.</span><span class="nc">SGD</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">BCEWithLogitsLoss</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">epoch_num</span><span class="p">)):</span>
+    <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+    <span class="c1"># taking first 100 elements as train and other 100 elements as test
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span> 
+    <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">Y</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+    <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+<span class="nf">print </span><span class="p">(</span><span class="sh">'</span><span class="s">accuracy </span><span class="sh">'</span><span class="p">,</span> <span class="n">torch</span><span class="p">.</span><span class="nf">eq</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">100</span><span class="p">:])</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Y</span><span class="p">[</span><span class="mi">100</span><span class="p">:]).</span><span class="nf">float</span><span class="p">().</span><span class="nf">mean</span><span class="p">()</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>And this is how it’s written in tinygrad:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">tinygrad</span> <span class="kn">import</span> <span class="n">Tensor</span><span class="p">,</span> <span class="n">nn</span>
+<span class="c1"># generating XOR dataset for example
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">logical_xor</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nf">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-2</span> <span class="c1"># adding some noise
+</span><span class="n">X</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="c1"># tinygrad doesn't have class similar to pytorch nn.Module,
+# so we mimic it here
+</span><span class="k">class</span> <span class="nc">MyNetwork</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">l1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">l2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+        
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">l2</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">l1</span><span class="p">(</span><span class="n">x</span><span class="p">).</span><span class="nf">sigmoid</span><span class="p">())</span>
+        
+        
+<span class="n">epoch_num</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nc">MyNetwork</span><span class="p">()</span>
+<span class="c1"># listing explicitly the model parameters to train
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">SGD</span><span class="p">([</span><span class="n">model</span><span class="p">.</span><span class="n">l1</span><span class="p">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">l1</span><span class="p">.</span><span class="n">bias</span><span class="p">,</span> 
+  <span class="n">model</span><span class="p">.</span><span class="n">l2</span><span class="p">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">l2</span><span class="p">.</span><span class="n">bias</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="n">binary_crossentropy_logits</span>
+<span class="k">with</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">train</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">epoch_num</span><span class="p">)):</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+        <span class="c1"># taking first 100 elements as train and other 100 elements as test
+</span>        <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span> 
+        <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">Y</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+        <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+        
+<span class="nf">print </span><span class="p">(</span><span class="sh">'</span><span class="s">accuracy </span><span class="sh">'</span><span class="p">,</span> 
+      <span class="n">Tensor</span><span class="p">.</span><span class="nf">eq</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">100</span><span class="p">:])</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Y</span><span class="p">[</span><span class="mi">100</span><span class="p">:]).</span><span class="nf">float</span><span class="p">().</span><span class="nf">mean</span><span class="p">().</span><span class="nf">numpy</span><span class="p">()</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>While tinygrad doesn’t aim to replicate PyTorch entirely, it’s powerful enough for many use cases. For developers looking to train simple models or run deep learning experiments in constrained environments, it can be a seamless replacement. If you need even more simplicity, the authors of tinygrad have created <a href="https://github.com/tinygrad/teenyygrad"><strong>teenytrad</strong></a> — a stripped-down version of tinygrad that implements its core ideas. It’s designed to be lightweight while still functional enough for basic tasks.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+<span class="kn">from</span> <span class="n">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">teenygrad</span> <span class="kn">import</span> <span class="n">Tensor</span><span class="p">,</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="n">teenygrad.nn.optim</span> <span class="kn">import</span> <span class="n">SGD</span>
+<span class="c1"># teenygrad doesn't contain Linear class, 
+# so we just copy it from tinygrad
+</span><span class="k">class</span> <span class="nc">Linear</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">in_features</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">out_features</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">bound</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">in_features</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="n">out_features</span><span class="p">,</span> 
+              <span class="n">in_features</span><span class="p">,</span> <span class="n">low</span><span class="o">=-</span><span class="n">bound</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">bound</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="n">out_features</span><span class="p">,</span>
+             <span class="n">low</span><span class="o">=-</span><span class="n">bound</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">bound</span><span class="p">)</span> <span class="k">if</span> <span class="n">bias</span> <span class="k">else</span> <span class="bp">None</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">x</span><span class="p">.</span><span class="nf">linear</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">weight</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(),</span> <span class="n">self</span><span class="p">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="c1"># generating XOR dataset for example
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">logical_xor</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nf">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-2</span> <span class="c1"># adding some noise
+</span><span class="n">X</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="nf">tolist</span><span class="p">())</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">(</span><span class="n">Y</span><span class="p">.</span><span class="nf">tolist</span><span class="p">())</span>
+<span class="c1"># teenygrad doesn't have class similar to pytorch nn.Module,
+# so we mimic it here
+</span><span class="k">class</span> <span class="nc">MyNetwork</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">l1</span> <span class="o">=</span> <span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">l2</span> <span class="o">=</span> <span class="nc">Linear</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">l2</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">l1</span><span class="p">(</span><span class="n">x</span><span class="p">).</span><span class="nf">sigmoid</span><span class="p">())</span>
+        
+        
+<span class="n">epoch_num</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">model</span> <span class="o">=</span> <span class="nc">MyNetwork</span><span class="p">()</span>
+<span class="c1"># listing explicitly the model parameters to train
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="nc">SGD</span><span class="p">([</span><span class="n">model</span><span class="p">.</span><span class="n">l1</span><span class="p">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">l1</span><span class="p">.</span><span class="n">bias</span><span class="p">,</span> 
+  <span class="n">model</span><span class="p">.</span><span class="n">l2</span><span class="p">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">l2</span><span class="p">.</span><span class="n">bias</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="n">binary_crossentropy_logits</span>
+<span class="k">with</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">train</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">epoch_num</span><span class="p">)):</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+        <span class="c1"># taking first 100 elements as train and other 100 elements as test
+</span>        <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">Y</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+        
+        <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+        
+<span class="nf">print </span><span class="p">(</span><span class="sh">'</span><span class="s">accuracy </span><span class="sh">'</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">100</span><span class="p">:]).</span><span class="nf">numpy</span><span class="p">()</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="p">,</span>
+       <span class="n">Y</span><span class="p">[</span><span class="mi">100</span><span class="p">:].</span><span class="nf">numpy</span><span class="p">()).</span><span class="nf">mean</span><span class="p">()</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>As demonstrated, teenygrad offers only basic deep learning functionality, but many additional features can be adapted from tinygrad. An interesting point is that all backend support has been removed from teenygrad and replaced with a simple, naive backend. Surprisingly, for my use case, this naive backend performs faster than tinygrad’s default backend. While it is approximately five times slower than PyTorch, this performance gap is negligible for small neural networks.</p>
+
+<h2 id="putting-all-together">Putting all together</h2>
+
+<p>So, to sum up what we aim to achieve:</p>
+
+<ol>
+  <li>Run an HTML webpage with Pyodide interpreter and Godot in one page.</li>
+  <li>Import teenygrad to to handle basic neural network operations and execute neural network logic.</li>
+  <li>Develop a set of simple functions to facilitate interaction between Godot’s JavaScript and Pyodide’s Python environment.</li>
+</ol>
+
+<center>
+<img src="../assets/img/post_nn_godot/scheme2.png" width="600" />
+</center>
+
+<p>The first step is quite simple: Godot allows to run HTML export with your HTML template, so you can inject Pyodide inside the HTML.</p>
+
+<center>
+<img src="../assets/img/post_nn_godot/export.png" width="600" />
+</center>
+
+<p>The second step is a bit trickier: Pyodide doesn’t allow direct imports from external files due to the limitations of HTML5 technologies and associated security restrictions. The simplest solution is to leverage Pyodide’s ability to create a local filesystem within the WASM container at runtime. By writing the entire Python server code (including teenygrad) directly into this local filesystem, we can bypass the need for external file imports.
+Here’s how it works in a basic setup:</p>
+
+<ol>
+  <li>Create an HTML template:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/Pyodide/v0.26.3/full/Pyodide.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="k">async</span> <span class="kd">function</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">Pyodide</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">loadPyodide</span><span class="p">();</span>
+        <span class="err">#</span> <span class="nx">we</span> <span class="nx">need</span> <span class="nx">numpy</span> <span class="nx">build</span><span class="o">-</span><span class="k">in</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">Pyodide</span>
+        <span class="k">await</span> <span class="nx">Pyodide</span><span class="p">.</span><span class="nf">loadPackage</span><span class="p">(</span><span class="dl">"</span><span class="s2">numpy</span><span class="dl">"</span><span class="p">);</span> 
+        <span class="nx">Pyodide</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="s2">`from pathlib import Path`</span><span class="p">);</span>
+        
+        <span class="nx">CODE</span> <span class="err">#</span> <span class="k">this</span> <span class="nx">text</span> <span class="nx">will</span> <span class="nx">be</span> <span class="nx">replaced</span> <span class="nx">by</span> <span class="nx">our</span> <span class="nx">python</span> <span class="nx">source</span> <span class="nx">code</span> <span class="nx">copying</span>
+        
+        <span class="err">#</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">our</span> <span class="nx">main</span> <span class="nx">entrypoint</span> <span class="kd">function</span>
+        <span class="nf">Pyodide</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="dl">"</span><span class="s2">from server import run</span><span class="dl">"</span><span class="p">);</span> 
+        
+        <span class="k">return</span> <span class="nx">Pyodide</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="kd">let</span> <span class="nx">PyodideReadyPromise</span> <span class="o">=</span> <span class="nf">main</span><span class="p">();</span>
+      <span class="kd">let</span> <span class="nx">PyodideInstance</span><span class="p">;</span>
+      <span class="nx">PyodideReadyPromise</span><span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">Pyodide</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">PyodideInstance</span> <span class="o">=</span> <span class="nx">Pyodide</span><span class="p">;</span>
+    <span class="p">});</span>
+      <span class="kd">function</span> <span class="nf">run_py</span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">run: </span><span class="dl">'</span><span class="o">+</span><span class="nx">cmd</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">PyodideInstance</span><span class="p">.</span><span class="nf">runPython</span><span class="p">(</span><span class="nx">cmd</span><span class="p">);</span> 
+            <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+    
+  <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"canvas"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"$GODOT_URL"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">var</span> <span class="nx">engine</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Engine</span><span class="p">(</span><span class="nx">$GODOT_CONFIG</span><span class="p">);</span>
+        <span class="nx">engine</span><span class="p">.</span><span class="nf">startGame</span><span class="p">();</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Create a python script that transforms the HTML template into real HTML:</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="nb">buffer</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nc">Path</span><span class="p">(</span><span class="sh">'</span><span class="s">./</span><span class="sh">'</span><span class="p">).</span><span class="nf">glob</span><span class="p">(</span><span class="sh">'</span><span class="s">**/*py</span><span class="sh">'</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp</span><span class="p">:</span>
+            <span class="c1"># usually can be met in comments
+</span>            <span class="n">text</span> <span class="o">=</span> <span class="n">inp</span><span class="p">.</span><span class="nf">read</span><span class="p">().</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">`</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s"> </span><span class="sh">'</span><span class="p">)</span> 
+        <span class="nb">buffer</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sa">f</span><span class="sh">"""</span><span class="s">
+Path(</span><span class="sh">"</span><span class="s">/home/Pyodide/</span><span class="si">{</span><span class="n">f</span><span class="p">.</span><span class="n">parent</span><span class="si">}</span><span class="sh">"</span><span class="s">).mkdir(parents=True, exist_ok=True)
+Path(</span><span class="sh">"</span><span class="s">/home/Pyodide/</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="s">).write_text(</span><span class="se">\"\"\"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="se">\"\"\"</span><span class="s">)</span><span class="sh">"""</span><span class="p">)</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">test.html</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">inp</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+        
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">test_out.html</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+        <span class="n">out</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">CODE</span><span class="sh">'</span><span class="p">,</span> 
+<span class="sh">"</span><span class="s">Pyodide.runPython(`</span><span class="sh">"</span><span class="o">+</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nb">buffer</span><span class="p">)</span><span class="o">+</span><span class="sh">"</span><span class="se">\n</span><span class="s">`)</span><span class="sh">"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>The solution is admittedly not very elegant: in the end, all the Python code must be embedded directly into the HTML file, significantly increasing its size. However, this is the trade-off for enabling neural network functionality. That said, there are ways to make this step more efficient, which I’ll discuss later.</p>
+
+<h1 id="example">Example</h1>
+
+<p>To bring everything together, let’s create a proof-of-concept application. We’ll build a Godot application to solve a simple 1D binary classification problem using logistic regression — one of the most popular and straightforward models for this task. The model will be implemented in a teenygrad using our Python server. The Godot application will include two text areas where users can input data points for the two classes. To verify that the model is working, there will also be a field where users can input a test point. Upon submission, the app will display the classifier’s confidence that the point belongs to class “1.”</p>
+
+<center>
+<img src="../assets/img/post_nn_godot/ui.png" width="600" />
+</center>
+
+<p>When the user presses the button, the following script will execute:</p>
+
+<pre><code class="language-godot">var x1 = []
+for x in  $Panel/HBoxContainer/TextEdit.text.split('\n'):
+  x1.append(float(x))
+ 
+var x2 = []
+for x in  $Panel/HBoxContainer/TextEdit2.text.split('\n'):
+x2.append(float(x))
+
+var json = JSON.stringify({'x1': x1, 'x2': x2, 'input': float($Panel/HBoxContainer2/LineEdit.text)})
+var cmd = "run_py(`run('%s')`);" % json
+var js_return = JavaScriptBridge.eval(cmd)
+print (['sent ', cmd])
+print(['got ', js_return]) # prints '3.0'
+$Panel/HBoxContainer2/LineEdit.text = 'Result: %s' % js_return
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">w</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">b</span><span class="p">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="bp">True</span> 
+  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="n">Tensor</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="nd">@self.w</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="n">b</span>
+    
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">post_data</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">post_data</span><span class="p">)</span>
+            <span class="n">response_message</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Received JSON data: </span><span class="si">{</span><span class="n">json_data</span><span class="si">}</span><span class="sh">"</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="sh">'</span><span class="s">x1</span><span class="sh">'</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="sh">'</span><span class="s">x2</span><span class="sh">'</span><span class="p">]</span>
+            
+            <span class="c1"># list concatenation
+</span>            <span class="n">x</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">).</span><span class="nf">reshape</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="c1"># making labels
+</span>            <span class="n">y</span> <span class="o">=</span> <span class="nc">Tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nf">len</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nf">len</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">()</span>
+            
+            <span class="c1"># setting SGD with quite aggressive learning rate
+</span>            <span class="n">opt</span> <span class="o">=</span> <span class="n">optim</span><span class="p">.</span><span class="nc">SGD</span><span class="p">([</span><span class="n">model</span><span class="p">.</span><span class="n">w</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">b</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">criterion</span> <span class="o">=</span> <span class="n">Tensor</span><span class="p">.</span><span class="n">binary_crossentropy_logits</span>
+            <span class="c1"># running optimization for 1000 epochs
+</span>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+                <span class="n">opt</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+                <span class="n">loss</span> <span class="o">=</span> <span class="nf">criterion</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+                <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+                <span class="n">opt</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+            
+            <span class="n">input_</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="sh">'</span><span class="s">input</span><span class="sh">'</span><span class="p">]</span>
+            <span class="n">response_message</span> <span class="o">=</span>  <span class="nf">str</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nc">Tensor</span><span class="p">([</span><span class="n">input_</span><span class="p">])).</span><span class="nf">sigmoid</span><span class="p">().</span><span class="nf">numpy</span><span class="p">())</span>
+            
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+             <span class="n">response_message</span> <span class="o">=</span> <span class="nf">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response_message</span>
+</code></pre></div></div>
+
+<p>After the button is pressed, the results will appear in the same input field.</p>
+
+<center>
+<img src="../assets/img/post_nn_godot/result.png" width="400" />
+
+<img src="../assets/img/post_nn_godot/magic.png" width="400" />
+</center>
+
+<p>For simplicity, we’ve omitted error handling. Additionally, the request to Pyodide is made from the main thread, causing the application to freeze until the Python server responds. On a typical laptop, this takes about 1–2 seconds, but on a mobile device, it may take significantly longer (up to 10 seconds in some cases).
+This demo is available <a href="https://bahleg.itch.io/nn-godot">here</a> , and <a href="https://github.com/bahleg/godot_nn_demo/">here</a> you can find the code.</p>
+
+<h1 id="pros-and-cons-and-final-thoughts">Pros and Cons and final thoughts</h1>
+
+<p>The method I’ve described has one major advantage: <strong>simplicity</strong>. It’s well-suited for prototyping or pet projects where you don’t need to worry about hiding or securing your code. However, for more complex or production-grade projects, there are notable limitations:</p>
+
+<ol>
+  <li><strong>Security</strong>: Embedding the entire codebase directly into an HTML page is far from ideal. Not only does it expose your intellectual property, but it also poses significant security concerns. To protect your code we can use some kinds of obfuscators like <a href="https://github.com/astrand/pyobfuscate">pyobfuscate</a>, but of course they are not foolproof. Also, Pyodide provides multiple ways to load your code, for example you can upload it on the web server and install it via python wheel. Nevertheless, this method seems to be overcomplicated if you are not targetting for the fully-fledged game project.</li>
+  <li><strong>Performance</strong>: Running neural networks directly inside a web browser comes with an unavoidable performance hit. This is an inherent limitation of the method, as the web environment is not optimized for computationally intensive tasks like deep learning. Compared to native PyTorch running on local hardware, the performance will be noticeably slower.</li>
+  <li><strong>Compatibility</strong>:While tinygrad and teenygrad share many similarities with PyTorch, they are not direct replacements. This means you won’t be able to seamlessly use libraries from the PyTorch ecosystem. On the other hand, the tinygrad repository <a href="https://github.com/tinygrad/tinygrad/blob/master/docs/showcase.md">claims</a> that it’s possible to run stable diffusion and LLaMA models on it, which is very impressive and gives us a hope that this is also somehow can be possible in the settings I’ve described.</li>
+</ol>
+
+<p>Even with theses drawbacks, this approach worth to test and can be useful in many use-cases from protyping to the pet-projects.
+Thank you for the reading! I hope my journey into integrating neural networks with Godot has been both informative and useful!</p>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">   
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
