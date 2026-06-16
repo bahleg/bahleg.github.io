@@ -10,6 +10,40 @@ html={https://infoscience.epfl.ch/entities/publication/4fc41eb5-3aca-4829-8bda-f
 year={2026}
 }
 
+@phdthesis{denisovmsc,
+  abbr = {MSc},
+  abstract={Работа посвящена задаче идентификации источника загрязнения воздуха
+по показаниям сети из небольшого числа датчиков с шумом. Рассматривается
+вероятностная модель, в которой координаты источника, момент начала
+и длительность выброса оцениваются совместно. Интенсивность выброса
+маргинализуется аналитически с учётом физического ограничения
+I0 >= 0 при усечённом нормальном априорном распределении. Предложены две параметризации профиля интенсивности: прямоугольный
+импульс и гауссов процесс. Для последнего выведены явные формулы
+апостериорного среднего и ковариации, допускающие маргинализацию
+по неопределённости положения источника через закон полной дисперсии.
+Байесовский вывод в пространстве параметров выполняется
+алгоритмом AMIS, адаптивно уточняющим факторизованное предложенное распределение
+в виде смеси гауссиан. Метод протестирован на синтетическом московском датасете при различных
+степенях временного огрубления наблюдений (от исходного разрешения
+до усреднения по 18 шагам). Медианная ошибка локализации источника
+составила 4,9 км для модели с прямоугольным профилем и 5,9~км
+для модели на основе гауссова процесса. Модель с гауссовым процессом
+демонстрирует существенно меньшую апостериорную неопределённость
+в пространстве координат: медианное значение σ_q составило
+4,3 км против 10,5 км у модели с прямоугольным профилем,
+что указывает на более концентрированный posterior при сопоставимой
+точности MAP-оценки. Дополнительно метод апробирован на данных аварии на АЭС Фукусима-1
+(2011), где при суточной дискретизации наблюдений локализация источника в пределах территории Японии.},
+abstract_en={This work addresses the problem of identifying an air pollution source from measurements obtained by a small network of noisy sensors. We consider a probabilistic model in which the source coordinates, the start time, and the duration of the release are estimated jointly. The emission intensity is marginalized analytically under the physical constraint I0>=0 using a truncated normal prior. Two parametrizations of the intensity profile are proposed: a rectangular pulse and a Gaussian process. For the latter, explicit formulas for the posterior mean and covariance are derived, allowing marginalization over the uncertainty in the source location via the law of total variance. Bayesian inference in the parameter space is performed using the AMIS algorithm, which adaptively refines a factorized proposal distribution represented as a Gaussian mixture. The method is tested on a synthetic Moscow dataset under various degrees of temporal aggregation of observations (from the original resolution up to averaging over 18 time steps). The median source localization error is 4.9 km for the rectangular-profile model and 5.9 km for the Gaussian-process model. The Gaussian-process model exhibits substantially lower posterior uncertainty in the coordinate space: the median value of σ_q​ is 4.3 km, compared to 10.5 km for the rectangular-profile model, indicating a more concentrated posterior for comparable MAP estimation accuracy. Additionally, the method is applied to data from the Fukushima Daiichi nuclear accident (2011), where, with daily observation aggregation, the source is localized within the territory of Japan.},
+  author_en= {Jacob Denisov},
+  author       = {Денисов Яков},   
+  title_en = {Air pollution source identification using noisy sensors, Master thesis at School of Data Analysis}, 
+  title        = {Идентификация источника загрязнения воздуха по датчикам с шумом, диплом магистра, ШАД},
+  note_en = {Scientific adviser: prof. Evgeny Burnaev, DSc. Scientific consultant: Oleg Bakhteev, PhD},
+  note ={Научный руководитель: д.ф.-м.н. проф. Бурнаев Е.В., научный консультант: к.ф.-м.н. Бахтеев О.Ю.},
+  year         = 2026,
+}
+
 @unpublished{habr_25_2,
 abbr={Хабр},
 title= "Intelligent Systems at Phystech: 2025 Year in Review",
